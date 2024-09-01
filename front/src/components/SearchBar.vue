@@ -1,10 +1,10 @@
 <template>
   <div class="search-bar">
-    <span class="icon search-icon">
+    <span class="absolute-icon search-icon">
       <IconSearch />
     </span>
     <input type="input" v-model="searchVal" placeholder="Rechercher..." />
-    <span v-if="searchVal" class="icon clear-icon" @click="searchVal = ''">
+    <span v-if="searchVal" class="absolute-icon clear-icon" @click="searchVal = ''">
       <IconCancel />
     </span>
   </div>
@@ -25,6 +25,7 @@ const searchVal = ref('')
   display: flex;
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 input {
@@ -32,24 +33,13 @@ input {
   padding: 0.5rem 3rem 0.5rem 3rem;
   font-size: 16px;
   font-weight: normal;
-  height: 38px;
+
   color: $primary;
   background-color: #00000022;
-  border: 1px solid $primary;
-  border-radius: 0;
+  border: 1px solid $shadow;
+  border-radius: 4px;
   transition: border-color 0.15s ease-in-out;
-  box-shadow: 1px 1px 2px $primary;
-}
-
-.icon {
-  position: absolute;
-  color: $primary;
-  top: 0;
-  display: block;
-  width: 1.5rem;
-  height: 100%;
-  align-content: center;
-  filter: brightness(70%);
+  box-shadow: 1px 1px 2px $shadow;
 }
 
 .search-icon {

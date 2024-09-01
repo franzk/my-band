@@ -12,3 +12,19 @@ body,
   margin: 0;
   padding: 0;
 }
+
+a,
+a:visited {
+  color: inherit;
+}
+
+.absolute-icon {
+  position: absolute;
+  color: $primary;
+  top: 0;
+  display: block;
+  width: 1.5rem;
+  height: 100%;
+  align-content: center;
+  filter: brightness(70%);
+}
