@@ -12,7 +12,7 @@
 
   <main>
     <section id="video">
-      <ProfileVideo />
+      <ProfileVideo youtubeId="ZTeqM5gciH8" />
     </section>
     <section id="bio">bio</section>
     <section id="pictures">pictures</section>

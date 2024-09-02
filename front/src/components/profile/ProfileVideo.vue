@@ -3,7 +3,7 @@
     <vue-plyr>
       <div class="plyr__video-embed">
         <iframe
-          src="https://youtube-nocookie.com/embed/ZTeqM5gciH8"
+          :src="`https://youtube-nocookie.com/embed/${youtubeId}`"
           allowfullscreen
           allowtransparency
           allow="autoplay"
@@ -15,5 +15,7 @@
 </template>
 
 <script setup lang="ts">
-// https://youtube-nocookie.com/embed/ZTeqM5gciH8
+const props = defineProps({
+  youtubeId: String // ZTeqM5gciH8
+})
 </script>
