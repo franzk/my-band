@@ -3,8 +3,8 @@
     <ProfileHeader
       title="Tranxen 200"
       slogan="Glucose Pop Rock"
-      coverImageUrl="/src/assets/fakedata/tranxen200/tranxen200-photo.webp"
-      avatarUrl="/src/assets/fakedata/tranxen200/tranxen200-logo.png"
+      coverImageUrl="/public/fakedata/tranxen200/tranxen200-photo.webp"
+      avatarUrl="/public/fakedata/tranxen200/tranxen200-logo.png"
     />
 
     <ProfileNavBar />
