@@ -16,6 +16,6 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  youtubeId: String // ZTeqM5gciH8
+  youtubeId: String
 })
 </script>

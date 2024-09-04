@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
+import ProfileHomeView from '@/views/profile/ProfileHomeView.vue'
+import ProfileAboutView from '@/views/profile/ProfileAboutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +15,19 @@ const router = createRouter({
     {
       path: '/profile/:id',
       name: 'profile',
-      component: ProfileView
+      component: ProfileView,
+      children: [
+        {
+          path: '',
+          name: 'profile-home',
+          component: ProfileHomeView
+        },
+        {
+          path: '/profile/:id/about',
+          name: 'profile-about',
+          component: ProfileAboutView
+        }
+      ]
     }
   ]
 })

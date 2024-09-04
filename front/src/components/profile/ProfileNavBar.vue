@@ -1,10 +1,12 @@
 <template>
   <nav>
     <ul>
-      <li><a href="#video">Video</a></li>
-      <li><a href="#bio">Bio</a></li>
-      <li><a href="#pictures">Pictures</a></li>
-      <li><a href="#news">News</a></li>
+      <li>
+        <RouterLink :to="{ name: 'profile-home' }"> What's up </RouterLink>
+      </li>
+      <li>
+        <RouterLink :to="{ name: 'profile-about' }"> About</RouterLink>
+      </li>
     </ul>
   </nav>
 </template>
@@ -18,6 +20,7 @@ nav {
   margin-top: 3.5rem;
 
   ul {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -26,6 +29,8 @@ nav {
     margin: $spacing-small 0;
 
     li {
+      flex: 1;
+      text-align: center;
       margin: 0 $spacing-small;
       a {
         text-decoration: none;
