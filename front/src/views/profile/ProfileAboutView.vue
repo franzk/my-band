@@ -5,10 +5,14 @@
       combines elements of rock, pop, and electronica.
     </article>
   </section>
-  <section id="pictures">pictures</section>
+  <section id="pictures">
+    <ProfileGallery />
+  </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ProfileGallery from '@/components/profile/ProfileGallery.vue'
+</script>
 
 <style lang="scss" scoped>
 #bio {
