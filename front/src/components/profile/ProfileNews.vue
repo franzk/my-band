@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="item in news" :key="item.id">
+    <li v-for="item in profileStore.profile.news" :key="item.id">
       <h3>{{ formatDate(item.date) }} : {{ item.title }}</h3>
       <p>{{ item.content }}</p>
     </li>
@@ -8,14 +8,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useNewsStore } from '@/stores/newsStore'
+import { useProfileStore } from '@/stores/profileStore'
 import dayjs from 'dayjs'
 
-const formatDate = (date: Date) => dayjs(date).format('DD/MM/YYYY')
+const profileStore = useProfileStore()
 
-const newsStore = useNewsStore()
-const news = ref(newsStore.latestNews)
+const formatDate = (date: Date) => dayjs(date).format('DD/MM/YYYY')
 </script>
 
 <style lang="scss" scoped>

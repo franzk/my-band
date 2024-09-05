@@ -1,23 +1,28 @@
 <template>
   <div class="profile-header-cover">
     <div class="cover-image">
-      <img :src="coverImageUrl" class="profile-picture" :alt="`${title} cover picture`" />
+      <img
+        :src="profileStore.profile.coverPictureUrl"
+        class="profile-picture"
+        :alt="`${profileStore.profile.name} cover picture`"
+      />
     </div>
     <div class="profile-avatar">
-      <img :src="avatarUrl" class="profile-logo" :alt="`${title} avatar`" />
+      <img
+        :src="profileStore.profile.avatarUrl"
+        class="profile-logo"
+        :alt="`${profileStore.profile.name} avatar`"
+      />
     </div>
-    <h1 class="lato-black profile-title">{{ title }}</h1>
-    <span class="lato-light-italic profile-slogan">{{ slogan }}</span>
+    <h1 class="lato-black profile-title">{{ profileStore.profile.name }}</h1>
+    <span class="lato-light-italic profile-slogan">{{ profileStore.profile.slogan }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  coverImageUrl: String,
-  avatarUrl: String,
-  title: String,
-  slogan: String
-})
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
 </script>
 
 <style lang="scss" scoped>

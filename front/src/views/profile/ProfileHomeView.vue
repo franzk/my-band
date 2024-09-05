@@ -1,6 +1,6 @@
 <template>
   <section id="video">
-    <ProfileVideo youtubeId="ZTeqM5gciH8" />
+    <ProfileVideo />
   </section>
   <section id="news">
     <ProfileNews />

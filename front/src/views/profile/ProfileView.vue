@@ -1,11 +1,6 @@
 <template>
   <section class="profile-header">
-    <ProfileHeader
-      title="Tranxen 200"
-      slogan="Glucose Pop Rock"
-      coverImageUrl="/fakedata/tranxen200/tranxen200-cover.png"
-      avatarUrl="/fakedata/tranxen200/tranxen200-logo.png"
-    />
+    <ProfileHeader />
 
     <ProfileNavBar />
   </section>

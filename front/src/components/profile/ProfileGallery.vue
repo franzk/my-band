@@ -1,13 +1,17 @@
 <template>
   <ul>
-    <li><img src="/fakedata/tranxen200/t1.jpg" /></li>
-    <li><img src="/fakedata/tranxen200/t2.jpg" /></li>
-    <li><img src="/fakedata/tranxen200/t3.png" /></li>
-    <li><img src="/fakedata/tranxen200/t4.jpg" /></li>
+    <li v-for="pictureUrl in profileStore.profile.picturesUrls" :key="pictureUrl">
+      <!-- TODO améliorer la key pictureUrl n'est pas forcément unique -->
+      <img :src="pictureUrl" />
+    </li>
   </ul>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
+</script>
 
 <style lang="scss" scoped>
 ul {

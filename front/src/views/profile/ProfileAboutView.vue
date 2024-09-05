@@ -1,8 +1,7 @@
 <template>
   <section id="bio">
     <article>
-      Tranxen 200 is a band from France. They are known for their unique style of music, which
-      combines elements of rock, pop, and electronica.
+      {{ profileStore.profile.bio }}
     </article>
   </section>
   <section id="pictures">
@@ -12,6 +11,9 @@
 
 <script setup lang="ts">
 import ProfileGallery from '@/components/profile/ProfileGallery.vue'
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
 </script>
 
 <style lang="scss" scoped>

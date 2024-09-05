@@ -3,7 +3,7 @@
     <vue-plyr>
       <div class="plyr__video-embed">
         <iframe
-          :src="`https://youtube-nocookie.com/embed/${youtubeId}`"
+          :src="`https://youtube-nocookie.com/embed/${profileStore.profile.youtubeVideoId}`"
           allowfullscreen
           allowtransparency
           allow="autoplay"
@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  youtubeId: String
-})
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
 </script>
