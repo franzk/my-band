@@ -1,5 +1,5 @@
-import type { NewsItem } from '@/types/NewsItem'
 import type { Picture } from '@/types/Picture'
+import type { Post } from './Post'
 
 export interface Profile {
   id: number
@@ -9,6 +9,6 @@ export interface Profile {
   avatarUrl: string
   coverPictureUrl: string
   youtubeVideoId: string
-  news: NewsItem[]
+  posts: Post[]
   pictures: Picture[]
 }

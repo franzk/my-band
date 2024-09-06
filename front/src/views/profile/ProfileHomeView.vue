@@ -3,11 +3,11 @@
     <ProfileVideo />
   </section>
   <section id="news">
-    <ProfileNews />
+    <ProfileFeed />
   </section>
 </template>
 
 <script setup lang="ts">
-import ProfileNews from '@/components/profile/ProfileNews.vue'
+import ProfileFeed from '@/components/profile/ProfileFeed.vue'
 import ProfileVideo from '@/components/profile/ProfileVideo.vue'
 </script>

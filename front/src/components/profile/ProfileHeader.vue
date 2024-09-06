@@ -69,7 +69,6 @@ const profileStore = useProfileStore()
   .profile-title {
     margin-top: 0;
     margin-bottom: $spacing-tiny;
-    font-size: 2.5rem;
   }
 
   .profile-slogan {
