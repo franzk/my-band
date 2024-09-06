@@ -1,8 +1,7 @@
 <template>
   <ul>
-    <li v-for="pictureUrl in profileStore.profile.picturesUrls" :key="pictureUrl">
-      <!-- TODO améliorer la key pictureUrl n'est pas forcément unique -->
-      <img :src="pictureUrl" />
+    <li v-for="picture in profileStore.profile?.pictures" :key="picture.id">
+      <img :src="picture.url" />
     </li>
   </ul>
 </template>

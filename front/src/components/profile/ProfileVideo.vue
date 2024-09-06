@@ -3,7 +3,7 @@
     <vue-plyr>
       <div class="plyr__video-embed">
         <iframe
-          :src="`https://youtube-nocookie.com/embed/${profileStore.profile.youtubeVideoId}`"
+          :src="`https://youtube-nocookie.com/embed/${profileStore.profile?.youtubeVideoId}`"
           allowfullscreen
           allowtransparency
           allow="autoplay"

@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="item in profileStore.profile.news" :key="item.id">
+    <li v-for="item in profileStore.profile?.news" :key="item.id">
       <h3>{{ formatDate(item.date) }} : {{ item.title }}</h3>
       <p>{{ item.content }}</p>
     </li>

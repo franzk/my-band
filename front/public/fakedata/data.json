@@ -1,0 +1,27 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Tranxen 200",
+      "slogan": "Glucose Pop Rock",
+      "bio": "Tranxen 200 is a band from France. They are known for their unique style of music, which combines elements of rock, pop, and electronica.",
+      "avatarUrl": "/fakedata/tranxen200/tranxen200-logo.png",
+      "coverPictureUrl": "/fakedata/tranxen200/tranxen200-cover.png",
+      "youtubeVideoId": "ZTeqM5gciH8",
+      "news": [
+        { "id": 1, "date": "2024-09-05", "title": "Hello", "content": "World" },
+        { "id": 2, "date": "2024-09-05", "title": "Hello", "content": "World" },
+        { "id": 3, "date": "2024-09-05", "title": "Hello", "content": "World" },
+        { "id": 4, "date": "2024-09-05", "title": "Hello", "content": "World" },
+        { "id": 5, "date": "2024-09-05", "title": "Hello", "content": "World" }
+      ],
+      "pictures": [
+        { "id": 1, "url": "/fakedata/tranxen200/t1.jpg" },
+        { "id": 2, "url": "/fakedata/tranxen200/t2.jpg" },
+        { "id": 3, "url": "/fakedata/tranxen200/t3.png" },
+        { "id": 4, "url": "/fakedata/tranxen200/t4.jpg" }
+      ]
+    }
+    
+  ]
+}

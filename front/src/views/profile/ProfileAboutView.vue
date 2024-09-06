@@ -1,7 +1,7 @@
 <template>
   <section id="bio">
     <article>
-      {{ profileStore.profile.bio }}
+      {{ profileStore.profile?.bio }}
     </article>
   </section>
   <section id="pictures">
