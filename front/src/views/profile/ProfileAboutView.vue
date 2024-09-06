@@ -19,6 +19,9 @@ const profileStore = useProfileStore()
 <style lang="scss" scoped>
 #bio {
   padding: $spacing-medium;
-  border-bottom: 1px solid $shadow;
+  // border-bottom: 1px solid $shadow;
+  background-color: $ghost;
+  border-radius: $border-radius-small;
+  margin: $spacing-medium;
 }
 </style>
