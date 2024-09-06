@@ -19,8 +19,6 @@ const searchVal = ref('')
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/variables.scss';
-
 .search-bar {
   display: flex;
   position: relative;
@@ -30,6 +28,7 @@ const searchVal = ref('')
 
 input {
   flex: 1;
+  width: 100%;
   padding: 0.5rem 3rem 0.5rem 3rem;
   font-size: 16px;
   font-weight: normal;

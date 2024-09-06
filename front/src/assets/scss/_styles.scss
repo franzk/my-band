@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import '@/assets/scss/fonts.scss';
 
 body {
   background-color: $background;
@@ -22,9 +22,17 @@ a:visited {
   position: absolute;
   color: $primary;
   top: 0;
-  display: block;
+  display: grid;
   width: 1.5rem;
   height: 100%;
   align-content: center;
   filter: brightness(70%);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }

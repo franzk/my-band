@@ -1,5 +1,7 @@
 <template>
-  <div class="home">Home</div>
+  <div class="home">
+    <RouterLink to="/profile/tranxen200">Tranxen 200</RouterLink>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

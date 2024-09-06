@@ -7,7 +7,7 @@
     </span>
     <span class="search"><SearchBar /></span>
     <span class="absolute-icon user">
-      <RouterLink to="/profile">
+      <RouterLink to="/account">
         <IconUser />
       </RouterLink>
     </span>
@@ -20,8 +20,6 @@ import IconUser from '@/components/icons/IconUser.vue'
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/variables.scss';
-
 .header {
   display: flex;
   padding: $spacing-small;
