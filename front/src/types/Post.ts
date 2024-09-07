@@ -5,4 +5,5 @@ export interface Post {
   date: Date
   content: string
   picture?: Picture
+  comments?: Comment[]
 }
