@@ -51,10 +51,10 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
 .post-item {
   display: flex;
   flex-direction: column;
-  padding-top: $spacing-small;
   background-color: $ghost;
   padding: $spacing-small;
-  border-radius: $border-radius-small;
+  border-radius: $border-radius-tiny;
+  border: 1px solid $shadow;
 
   .info {
     display: flex;
@@ -89,7 +89,7 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
 
   ul {
     list-style: none;
-    padding: $spacing-small;
+    padding: 0;
 
     li {
       margin: $spacing-tiny;
