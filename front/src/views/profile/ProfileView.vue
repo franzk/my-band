@@ -30,7 +30,7 @@ profileStore.fetchProfile(1)
     top: 0;
     left: 0;
     right: 0;
-    height: 17rem;
+    height: $profile-header-height;
   }
 }
 </style>

@@ -31,7 +31,7 @@ import IconPlayCircle from '../icons/IconPlayCircle.vue'
 nav {
   position: sticky;
   top: 0;
-  height: 17rem;
+  height: $profile-header-height;
   z-index: 1;
 
   ul {
@@ -48,10 +48,10 @@ nav {
   }
 
   .nav-icon {
-    width: 2rem;
-    height: 2rem;
+    width: $profile-nav-icon-size;
+    height: $profile-nav-icon-size;
     color: $primary;
-    background-color: #aa1a1acc;
+    background-color: $secondary;
     border-radius: 50%;
     padding: $spacing-small;
   }

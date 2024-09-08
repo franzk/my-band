@@ -54,7 +54,7 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
   background-color: $ghost;
   padding: $spacing-small;
   border-radius: $border-radius-tiny;
-  border: 1px solid $shadow;
+  border: $border-size-tiny solid $shadow;
 
   .info {
     display: flex;
