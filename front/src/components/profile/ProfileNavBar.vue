@@ -2,41 +2,58 @@
   <nav>
     <ul>
       <li>
-        <RouterLink :to="{ name: 'profile-home' }"> What's up </RouterLink>
+        <RouterLink :to="{ name: 'profile-home' }">
+          <IconHome class="nav-icon" />
+        </RouterLink>
       </li>
       <li>
-        <RouterLink :to="{ name: 'profile-about' }"> About</RouterLink>
+        <RouterLink :to="{ name: 'profile-about' }">
+          <IconPlayCircle class="nav-icon" />
+        </RouterLink>
+      </li>
+
+      <li>
+        <RouterLink :to="{ name: 'profile-about' }">
+          <IconGroup class="nav-icon" />
+        </RouterLink>
       </li>
     </ul>
   </nav>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import IconHome from '@/components/icons/IconHome.vue'
+import IconGroup from '../icons/IconGroup.vue'
+import IconPlayCircle from '../icons/IconPlayCircle.vue'
+</script>
 
 <style lang="scss" scoped>
 nav {
-  width: 100%;
-  border-bottom: 1px solid $ghost;
-  margin-top: 3.5rem;
+  position: sticky;
+  top: 0;
+  height: 17rem;
+  z-index: 1;
 
   ul {
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: start;
+    flex-direction: column;
+    align-items: end;
     list-style: none;
-    padding: 0;
-    margin: $spacing-small 0;
+    margin: 0;
+    padding: $spacing-small $spacing-small 0 0;
 
     li {
-      flex: 1;
-      text-align: center;
-      margin: 0 $spacing-small;
-      a {
-        text-decoration: none;
-        color: $primary;
-      }
+      margin-bottom: $spacing-small;
     }
+  }
+
+  .nav-icon {
+    width: 2rem;
+    height: 2rem;
+    color: $primary;
+    background-color: #aa1a1acc;
+    border-radius: 50%;
+    padding: $spacing-small;
   }
 }
 </style>
