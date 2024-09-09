@@ -7,7 +7,7 @@
         </RouterLink>
       </li>
       <li>
-        <RouterLink :to="{ name: 'profile-about' }">
+        <RouterLink :to="{ name: 'profile-media' }">
           <IconPlayCircle class="nav-icon" />
         </RouterLink>
       </li>

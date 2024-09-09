@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
 import ProfileHomeView from '@/views/profile/ProfileHomeView.vue'
 import ProfileAboutView from '@/views/profile/ProfileAboutView.vue'
+import ProfileMediaView from '@/views/profile/ProfileMediaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
           path: '',
           name: 'profile-home',
           component: ProfileHomeView
+        },
+        {
+          path: '/profile/:id/media',
+          name: 'profile-media',
+          component: ProfileMediaView
         },
         {
           path: '/profile/:id/about',
