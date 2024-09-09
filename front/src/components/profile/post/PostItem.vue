@@ -1,14 +1,13 @@
 <template>
   <article class="post-item">
-    <div class="info">
-      <img :src="profileAvatarUrl" alt="" />
-      <p>{{ formattedDate }}</p>
-    </div>
     <div class="text">
-      <p>{{ post.content }}</p>
+      <p>+ {{ post.content }}</p>
     </div>
     <div v-if="post.picture?.url" class="image">
       <img :src="post.picture.url" alt="" />
+    </div>
+    <div class="info">
+      <p>{{ formattedDate }}</p>
     </div>
     <div v-if="post.comments" @click="showComments = !showComments">
       <p class="comments-count">{{ post.comments.length }} commentaires</p>
@@ -77,6 +76,9 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
 
   .text {
     flex: 1;
+    p {
+      margin: 0;
+    }
   }
 
   .image {

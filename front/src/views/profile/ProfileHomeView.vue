@@ -1,13 +1,40 @@
 <template>
-  <section id="video">
-    <ProfileVideo />
+  <section id="bio">
+    <p>{{ profileStore.profile?.bio }}</p>
   </section>
-  <section id="news">
-    <ProfileFeed />
+  <section id="video">
+    <!--ProfileVideo /-->
+    <VideoPlayer :youtubeVideoId="profileStore.profile?.youtubeVideoId" />
+  </section>
+  <section id="latest-posts">
+    <PostFeed :postCount="3" />
+    <p>
+      <RouterLink :to="{ name: 'profile-feed' }">voir tous les posts >></RouterLink>
+    </p>
   </section>
 </template>
 
 <script setup lang="ts">
-import ProfileFeed from '@/components/profile/ProfileFeed.vue'
-import ProfileVideo from '@/components/profile/ProfileVideo.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
+import PostFeed from '@/components/profile/post/PostFeed.vue'
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
 </script>
+
+<style lang="scss" scoped>
+#bio {
+  padding: $spacing-small;
+  background-color: $ghost;
+  border-radius: $border-radius-small;
+  margin: 0 $spacing-medium $spacing-medium $spacing-medium;
+  p {
+    margin: 0;
+  }
+}
+#latest-posts {
+  p {
+    margin: 0 0 $spacing-medium $spacing-medium;
+  }
+}
+</style>

@@ -7,14 +7,8 @@
         </RouterLink>
       </li>
       <li>
-        <RouterLink :to="{ name: 'profile-media' }">
-          <IconPlayCircle class="nav-icon" />
-        </RouterLink>
-      </li>
-
-      <li>
-        <RouterLink :to="{ name: 'profile-about' }">
-          <IconGroup class="nav-icon" />
+        <RouterLink :to="{ name: 'profile-feed' }">
+          <IconFeed class="nav-icon" />
         </RouterLink>
       </li>
     </ul>
@@ -23,8 +17,8 @@
 
 <script setup lang="ts">
 import IconHome from '@/components/icons/IconHome.vue'
-import IconGroup from '../icons/IconGroup.vue'
-import IconPlayCircle from '../icons/IconPlayCircle.vue'
+import IconGroup from '@/components/icons/IconGroup.vue'
+import IconFeed from '@/components/icons/IconFeed.vue'
 </script>
 
 <style lang="scss" scoped>

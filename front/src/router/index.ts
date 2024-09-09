@@ -25,13 +25,8 @@ const router = createRouter({
         },
         {
           path: '/profile/:id/media',
-          name: 'profile-media',
+          name: 'profile-feed',
           component: ProfileMediaView
-        },
-        {
-          path: '/profile/:id/about',
-          name: 'profile-about',
-          component: ProfileAboutView
         }
       ]
     }
