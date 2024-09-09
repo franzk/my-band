@@ -8,6 +8,8 @@ body {
 html,
 body,
 #app {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -30,9 +32,13 @@ a:visited {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: $font-size-xxl;
+}
+
+h2 {
+  font-size: $font-size-xl;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: $font-size-large;
 }

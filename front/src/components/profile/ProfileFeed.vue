@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="post-list">
     <li v-for="item in profileStore.profile?.posts" :key="item.id">
       <PostItem :post="item" />
     </li>
@@ -14,12 +14,13 @@ const profileStore = useProfileStore()
 </script>
 
 <style lang="scss" scoped>
-ul {
+.post-list {
   list-style: none;
   padding: $spacing-small;
 
   li {
     margin: $spacing-tiny;
+    margin-bottom: $spacing-medium;
   }
 }
 </style>

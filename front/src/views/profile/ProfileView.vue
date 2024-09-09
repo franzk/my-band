@@ -1,13 +1,15 @@
 <template>
-  <section class="profile-header">
-    <ProfileHeader />
-
+  <section class="profile">
     <ProfileNavBar />
-  </section>
 
-  <main>
-    <RouterView />
-  </main>
+    <section class="profile-header">
+      <ProfileHeader />
+    </section>
+
+    <main>
+      <RouterView />
+    </main>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -18,3 +20,17 @@ import { useProfileStore } from '@/stores/profileStore'
 const profileStore = useProfileStore()
 profileStore.fetchProfile(1)
 </script>
+
+<style lang="scss" scoped>
+.profile {
+  position: relative;
+
+  .profile-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $profile-header-height;
+  }
+}
+</style>

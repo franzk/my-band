@@ -29,24 +29,24 @@ const searchVal = ref('')
 input {
   flex: 1;
   width: 100%;
-  padding: 0.5rem 3rem 0.5rem 3rem;
-  font-size: 16px;
+  padding: $spacing-small 3rem $spacing-small 3rem;
+  font-size: $font-size-medium;
   font-weight: normal;
 
   color: $primary;
-  background-color: #00000022;
-  border: 1px solid $shadow;
-  border-radius: 4px;
+  background-color: $black;
+  border: $border-size-tiny solid $shadow;
+  border-radius: $border-radius-xs;
   transition: border-color 0.15s ease-in-out;
   box-shadow: 1px 1px 2px $shadow;
 }
 
 .search-icon {
-  left: 1rem;
+  left: $spacing-medium;
 }
 
 .clear-icon {
-  right: 1rem;
+  right: $spacing-medium;
   cursor: pointer;
 }
 </style>

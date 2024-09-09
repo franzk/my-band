@@ -29,15 +29,14 @@ const profileStore = useProfileStore()
 .profile-header-cover {
   position: relative;
   text-align: center;
-  height: 10rem;
-  padding-bottom: 3rem;
+  height: $profile-header-cover-height;
 
   .cover-image {
     width: 100%;
     height: 100%;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%); /* Coupe la photo en biais */
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-medium;
 
     img {
       width: 100%;
@@ -49,15 +48,14 @@ const profileStore = useProfileStore()
 
   .profile-avatar {
     position: absolute;
-    width: 5rem;
-    height: 5rem;
+    width: $profile-avatar-size;
+    height: $profile-avatar-size;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid $shadow;
-    top: 6rem;
+    border: $border-size-small solid $primary;
+    top: $profile-avatar-top;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 2px 2px 5px $ghost;
 
     img {
       width: 100%;
@@ -72,7 +70,7 @@ const profileStore = useProfileStore()
   }
 
   .profile-slogan {
-    font-size: 1rem;
+    font-size: $font-size-medium;
   }
 }
 </style>
