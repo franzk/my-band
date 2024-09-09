@@ -5,8 +5,7 @@
         <iframe
           :src="`https://youtube-nocookie.com/embed/${profileStore.profile?.youtubeVideoId}`"
           allowfullscreen
-          allowtransparency
-          allow="autoplay"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         >
         </iframe>
       </div>
