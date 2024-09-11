@@ -38,6 +38,7 @@ nav {
 
     li {
       margin-bottom: $spacing-small;
+      display: flex;
     }
   }
 

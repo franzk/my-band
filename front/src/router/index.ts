@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
 import ProfileHomeView from '@/views/profile/ProfileHomeView.vue'
-import ProfileAboutView from '@/views/profile/ProfileAboutView.vue'
-import ProfileMediaView from '@/views/profile/ProfileMediaView.vue'
+import ProfileFeedView from '@/views/profile/ProfileFeedView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +25,7 @@ const router = createRouter({
         {
           path: '/profile/:id/media',
           name: 'profile-feed',
-          component: ProfileMediaView
+          component: ProfileFeedView
         }
       ]
     }
