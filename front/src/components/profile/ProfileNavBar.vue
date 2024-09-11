@@ -25,7 +25,7 @@ import IconFeed from '@/components/icons/IconFeed.vue'
 nav {
   position: sticky;
   top: 0;
-  height: $profile-header-height;
+  height: 0rem;
   z-index: 1;
 
   ul {

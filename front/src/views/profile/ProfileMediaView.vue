@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import PostFeed from '@/components/profile/post/PostFeed.vue'
+import ProfileHeaderSmall from '@/components/profile/ProfileHeaderSmall.vue'
+</script>
+
 <template>
-  <p style="text-align: center">under construction</p>
+  <div class="profile-header">
+    <ProfileHeaderSmall />
+  </div>
+  <section class="feed">
+    <PostFeed />
+  </section>
 </template>
+
+<style lang="scss" scoped></style>
