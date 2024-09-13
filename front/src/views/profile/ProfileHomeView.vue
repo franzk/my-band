@@ -1,11 +1,7 @@
 <template>
-  <section class="profile-header">
+  <!--section class="profile-header">
     <ProfileHeader />
-  </section>
-
-  <section id="bio">
-    <p>{{ profileStore.profile?.bio }}</p>
-  </section>
+  </section -->
 
   <section id="video">
     <!--ProfileVideo /-->
@@ -13,15 +9,12 @@
   </section>
 
   <section id="latest-posts">
-    <PostFeed :postCount="3" />
-    <p>
-      <RouterLink :to="{ name: 'profile-feed' }">voir tous les posts >></RouterLink>
-    </p>
+    <PostFeed />
   </section>
 </template>
 
 <script setup lang="ts">
-import ProfileHeader from '@/components/profile/ProfileHeader.vue'
+// import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 import PostFeed from '@/components/profile/post/PostFeed.vue'
 import { useProfileStore } from '@/stores/profileStore'
@@ -33,15 +26,7 @@ const profileStore = useProfileStore()
 .profile-header {
   height: $profile-header-height;
 }
-#bio {
-  padding: $spacing-small;
-  background-color: $ghost;
-  border-radius: $border-radius-small;
-  margin: 0 $spacing-medium $spacing-medium $spacing-medium;
-  p {
-    margin: 0;
-  }
-}
+
 #latest-posts {
   p {
     margin: 0 0 $spacing-medium $spacing-medium;

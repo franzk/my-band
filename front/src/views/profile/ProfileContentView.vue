@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import PostFeed from '@/components/profile/post/PostFeed.vue'
 import ProfileHeaderSmall from '@/components/profile/ProfileHeaderSmall.vue'
 </script>
 
@@ -8,12 +7,12 @@ import ProfileHeaderSmall from '@/components/profile/ProfileHeaderSmall.vue'
     <ProfileHeaderSmall />
   </div>
   <div class="chips-menu">
-    <RouterLink :to="{ name: 'profile-home' }">Posts</RouterLink>
-    <RouterLink :to="{ name: 'profile-home' }">Media</RouterLink>
-    <RouterLink :to="{ name: 'profile-home' }">Links</RouterLink>
+    <RouterLink :to="{ name: 'profile-content-posts' }">Posts</RouterLink>
+    <RouterLink :to="{ name: 'profile-content-media' }">Media</RouterLink>
+    <RouterLink :to="{ name: 'profile-content-links' }">Links</RouterLink>
   </div>
-  <section class="feed">
-    <PostFeed />
+  <section class="content">
+    <RouterView />
   </section>
 </template>
 
