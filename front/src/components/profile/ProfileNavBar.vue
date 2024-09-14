@@ -16,7 +16,7 @@
   gap: $spacing-small;
   margin: $spacing-small;
   padding: $spacing-small;
-  background-color: $ghost;
+  background-color: black;
   border-radius: $border-radius-small;
   a {
     text-decoration: none;
