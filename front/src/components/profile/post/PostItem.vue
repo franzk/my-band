@@ -1,7 +1,9 @@
 <template>
   <article class="post-item">
     <div class="text">
-      <p>+ {{ post.content }}</p>
+      <p>
+        {{ post.content }}
+      </p>
     </div>
     <div v-if="post.picture?.url" class="image">
       <img :src="post.picture.url" alt="" />
@@ -48,6 +50,17 @@ const showComments = ref(false)
 
 dayjs.locale('fr')
 const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
+
+const postType = computed(() => {
+  switch (true) {
+    case !!props.post.picture?.url:
+      return 'picture'
+    case !!props.post.video?.youtubeId:
+      return 'video'
+    default:
+      return 'text'
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -81,7 +94,7 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
   .text {
     flex: 1;
     p {
-      margin: 0;
+      margin: 0 0 $spacing-small 0;
     }
   }
 

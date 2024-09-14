@@ -7,7 +7,7 @@ export const useProfileStore = defineStore('profileStore', () => {
   /**
    * le profil actuellement affiché
    */
-  const profile = ref(null as Profile | null)
+  const profile = ref<null | Profile>(null)
 
   /**
    * fetch les données d'un profil
