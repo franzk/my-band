@@ -16,9 +16,16 @@
 import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import ProfileNavBar from '@/components/profile/ProfileNavBar.vue'
 import { useProfileStore } from '@/stores/profileStore'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const profileStore = useProfileStore()
-profileStore.fetchProfile(1)
+
+const profileId = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
+
+if (profileId) {
+  profileStore.fetchProfile(profileId)
+}
 </script>
 
 <style lang="scss" scoped>

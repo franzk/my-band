@@ -1,22 +1,12 @@
 <template>
-  {{ props }}
+  {{ profileStore.profile?.name }}
+  {{ postStore.post }}
 </template>
 
 <script setup lang="ts">
-import type { Post } from '@/types/Post'
+import { usePostStore } from '@/stores/postStore'
+import { useProfileStore } from '@/stores/profileStore'
 
-const props = defineProps({
-  post: {
-    type: Object as () => Post,
-    required: true
-  },
-  profileTitle: {
-    type: String,
-    default: ''
-  },
-  profileAvatarUrl: {
-    type: String,
-    default: ''
-  }
-})
+const postStore = usePostStore()
+const profileStore = useProfileStore()
 </script>

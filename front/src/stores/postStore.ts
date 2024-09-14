@@ -8,9 +8,20 @@ export const usePostStore = defineStore('postStore', () => {
    */
   const post = ref<Post | null>(null)
 
-  const setPost = (data: Post) => {
-    post.value = data
+  /**
+   * fetch post from the API
+   */
+  const fetchPost = async (id: number) => {
+    try {
+      const response = await fetch(`http://localhost:3000/posts/${id}`)
+      const data = await response.json()
+
+      post.value = data as Post
+    } catch (error) {
+      console.error('Error fetching post', error)
+      post.value = null
+    }
   }
 
-  return { post, setPost }
+  return { post, fetchPost }
 })

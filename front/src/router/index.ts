@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
 import ProfileHomeView from '@/views/profile/ProfileHomeView.vue'
 import ProfileLinks from '@/components/profile/content/ProfileLinks.vue'
+import PostView from '@/views/PostView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,11 @@ const router = createRouter({
           component: ProfileLinks
         }
       ]
+    },
+    {
+      path: '/post/:id',
+      name: 'post',
+      component: PostView
     }
   ]
 })

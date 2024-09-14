@@ -13,7 +13,7 @@ export const useProfileStore = defineStore('profileStore', () => {
    * fetch a profile from the API
    * @param id : the id of the profile to fetch
    */
-  const fetchProfile = async (id: number) => {
+  const fetchProfile = async (id: string) => {
     const response = await axios.get(`http://localhost:3000/profiles/${id}`)
     const data = await response.data
 

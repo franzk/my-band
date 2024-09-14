@@ -1,6 +1,6 @@
 <template>
   <article class="post-item">
-    <div class="text">
+    <div class="text" :class="{ skeleton: skeleton }">
       <p>
         {{ post.content }}
       </p>
@@ -11,7 +11,7 @@
     <div v-if="post.video?.youtubeId" class="video">
       <VideoPlayer :youtubeId="post.video.youtubeId" />
     </div>
-    <div class="info">
+    <div class="info" :class="{ skeleton: skeleton }">
       <p>{{ formattedDate }}</p>
     </div>
     <div v-if="post.comments" @click="showComments = !showComments">
@@ -38,18 +38,24 @@ import VideoPlayer from '@/components/VideoPlayer.vue'
 const props = defineProps({
   post: {
     type: Object as () => Post,
-    required: true
+    default: () => ({})
   },
   profileAvatarUrl: {
     type: String,
     default: ''
+  },
+  skeleton: {
+    type: Boolean,
+    default: false
   }
 })
 
 const showComments = ref(false)
 
 dayjs.locale('fr')
-const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
+const formattedDate = computed(() =>
+  props.post.date ? dayjs(props.post.date).format('D MMMM YYYY') : ''
+)
 
 const postType = computed(() => {
   switch (true) {

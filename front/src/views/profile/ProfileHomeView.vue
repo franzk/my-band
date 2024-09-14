@@ -1,10 +1,5 @@
 <template>
-  <!--section class="profile-header">
-    <ProfileHeader />
-  </section -->
-
   <section id="video">
-    <!--ProfileVideo /-->
     <VideoPlayer :youtubeId="profileStore.profile?.video?.youtubeId" />
   </section>
 
@@ -14,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-// import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 import PostFeed from '@/components/profile/post/PostFeed.vue'
 import { useProfileStore } from '@/stores/profileStore'

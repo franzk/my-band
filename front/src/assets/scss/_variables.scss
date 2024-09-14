@@ -1,3 +1,5 @@
+@import '@/assets/scss/_keyframes.scss';
+
 // colors
 $primary: #ffffffdd;
 $secondary: #aa1a1acc;
@@ -7,6 +9,13 @@ $ghost: #ffffff11;
 
 $background: #000000ee;
 $black: #000000;
+
+$skeleton: linear-gradient(
+  90deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(255, 255, 255, 0.2) 50%,
+  rgba(255, 255, 255, 0) 100%
+);
 
 // spacings
 $spacing-tiny: 0.25rem;

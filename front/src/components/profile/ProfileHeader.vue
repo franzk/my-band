@@ -1,30 +1,57 @@
 <template>
   <div class="profile-header-cover">
-    <div class="cover-image">
+    <!-- cover and avatar -->
+    <div class="cover-image" :class="{ skeleton: !profileStore.profile }">
       <img
+        v-if="profileStore.profile?.coverPictureUrl"
         :src="profileStore.profile?.coverPictureUrl"
-        :alt="`${profileStore.profile?.name} cover picture`"
+        :alt="altCoverPicture"
       />
     </div>
+
     <div class="profile-avatar">
-      <img :src="profileStore.profile?.avatarUrl" :alt="`${profileStore.profile?.name} avatar`" />
+      <img
+        v-if="profileStore.profile?.avatarUrl"
+        :src="profileStore.profile?.avatarUrl"
+        :alt="altAvatarPicture"
+        class="rounded-image"
+      />
     </div>
   </div>
+
+  <!-- title and slogan -->
   <div class="profile-header-title">
-    <h1 class="lato-black profile-title">{{ profileStore.profile?.name }}</h1>
-    <span class="lato-light-italic profile-slogan">{{ profileStore.profile?.slogan }}</span>
+    <h1 class="lato-black profile-title" :class="{ skeleton: !profileStore.profile }">
+      {{ profileStore.profile?.name }}
+    </h1>
+    <span class="lato-light-italic profile-slogan" :class="{ skeleton: !profileStore.profile }">{{
+      profileStore.profile?.slogan
+    }}</span>
   </div>
-  <section id="bio">
-    <p>{{ profileStore.profile?.bio }}</p>
+
+  <!-- bio -->
+  <section id="bio" :class="{ skeleton: !profileStore.profile }">
+    <p v-if="profileStore.profile?.bio">{{ profileStore.profile?.bio }}</p>
   </section>
+
+  <!-- actions -->
   <ProfileActions />
 </template>
 
 <script setup lang="ts">
 import { useProfileStore } from '@/stores/profileStore'
 import ProfileActions from '@/components/profile/ProfileActions.vue'
+import { computed } from 'vue'
 
 const profileStore = useProfileStore()
+
+const altCoverPicture = computed(() =>
+  profileStore.profile?.name ? `${profileStore.profile.name} cover picture` : ''
+)
+
+const altAvatarPicture = computed(() =>
+  profileStore.profile?.name ? `${profileStore.profile.name} avatar picture` : ''
+)
 </script>
 
 <style lang="scss" scoped>
@@ -53,18 +80,9 @@ const profileStore = useProfileStore()
     position: absolute;
     width: $profile-avatar-size;
     height: $profile-avatar-size;
-    border-radius: 50%;
-    overflow: hidden;
-    border: $border-size-small solid $primary;
     top: $profile-avatar-top;
     left: 50%;
     transform: translateX(-50%);
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 }
 
