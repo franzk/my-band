@@ -1,19 +1,30 @@
 <template>
   <article class="post-item">
+    <!-- text -->
     <div class="text" :class="{ skeleton: skeleton }">
       <p>
         {{ post.content }}
       </p>
     </div>
+
+    <!-- image -->
     <div v-if="post.picture?.url" class="image">
-      <img :src="post.picture.url" alt="" />
+      <RouterLink :to="{ name: 'post', params: { id: post.id } }">
+        <img :src="post.picture.url" alt=""
+      /></RouterLink>
     </div>
+
+    <!-- video -->
     <div v-if="post.video?.youtubeId" class="video">
       <VideoPlayer :youtubeId="post.video.youtubeId" />
     </div>
+
+    <!-- date -->
     <div class="info" :class="{ skeleton: skeleton }">
       <p>{{ formattedDate }}</p>
     </div>
+
+    <!-- comments -->
     <div v-if="post.comments" @click="showComments = !showComments">
       <p class="comments-count">{{ post.comments.length }} commentaires</p>
       <transition name="expand">
@@ -56,17 +67,6 @@ dayjs.locale('fr')
 const formattedDate = computed(() =>
   props.post.date ? dayjs(props.post.date).format('D MMMM YYYY') : ''
 )
-
-const postType = computed(() => {
-  switch (true) {
-    case !!props.post.picture?.url:
-      return 'picture'
-    case !!props.post.video?.youtubeId:
-      return 'video'
-    default:
-      return 'text'
-  }
-})
 </script>
 
 <style lang="scss" scoped>

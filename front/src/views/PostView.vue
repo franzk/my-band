@@ -1,12 +1,7 @@
-<template>
-  {{ profileStore.profile?.name }}
-  {{ postStore.post }}
-</template>
+<template>Post id : {{ route.params.id }}</template>
 
 <script setup lang="ts">
-import { usePostStore } from '@/stores/postStore'
-import { useProfileStore } from '@/stores/profileStore'
+import { useRoute } from 'vue-router'
 
-const postStore = usePostStore()
-const profileStore = useProfileStore()
+const route = useRoute()
 </script>
