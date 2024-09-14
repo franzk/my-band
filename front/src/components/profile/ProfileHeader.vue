@@ -38,7 +38,7 @@ const profileStore = useProfileStore()
     width: 100%;
     height: 100%;
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%); /* Coupe la photo en biais */
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%); /* cut the image in a triangle shape */
     margin-bottom: $spacing-medium;
 
     img {

@@ -2,6 +2,9 @@ import type { Picture } from '@/types/Picture'
 import type { Post } from '@/types/Post'
 import type { Video } from '@/types/Video'
 
+/**
+ * Profile type
+ */
 export interface Profile {
   id: number
   name: string

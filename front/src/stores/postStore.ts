@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 export const usePostStore = defineStore('postStore', () => {
   /**
-   * le post actuellement affiché
+   * the currently displayed post
    */
   const post = ref<Post | null>(null)
 
