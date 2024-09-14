@@ -16,13 +16,13 @@
   gap: $spacing-small;
   margin: $spacing-small;
   padding: $spacing-small;
-  background-color: black;
+  background-color: $black;
   border-radius: $border-radius-small;
   a {
     text-decoration: none;
     color: $primary;
     padding: $spacing-small;
-    border-radius: $border-radius-small;
+    border-radius: $border-radius-xxl;
     background-color: $secondary;
   }
   a.active {

@@ -2,8 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
 import ProfileHomeView from '@/views/profile/ProfileHomeView.vue'
-import ProfileLinks from '@/components/profile/content/ProfileLinks.vue'
 import PostView from '@/views/PostView.vue'
+import ProfileLinksView from '@/views/profile/ProfileLinksView.vue'
+import ProfilePicturesView from '@/views/profile/ProfilePicturesView.vue'
+import ProfileVideosView from '@/views/profile/ProfileVideosView.vue'
+import ProfileMusicView from '@/views/profile/ProfileMusicView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,22 +29,22 @@ const router = createRouter({
         {
           path: '/profile/:id/pictures',
           name: 'profile-pictures',
-          component: ProfileHomeView
+          component: ProfilePicturesView
         },
         {
           path: '/profile/:id/videos',
           name: 'profile-videos',
-          component: ProfileHomeView
+          component: ProfileVideosView
         },
         {
           path: '/profile/:id/music',
           name: 'profile-music',
-          component: ProfileHomeView
+          component: ProfileMusicView
         },
         {
           path: '/profile/:id/content/links',
           name: 'profile-links',
-          component: ProfileLinks
+          component: ProfileLinksView
         }
       ]
     },
