@@ -6,6 +6,9 @@
     <div v-if="post.picture?.url" class="image">
       <img :src="post.picture.url" alt="" />
     </div>
+    <div v-if="post.video?.youtubeId" class="video">
+      <VideoPlayer :youtubeId="post.video.youtubeId" />
+    </div>
     <div class="info">
       <p>{{ formattedDate }}</p>
     </div>
@@ -28,6 +31,7 @@ import type { Post } from '@/types/Post'
 import dayjs from 'dayjs'
 import 'dayjs/locale/fr'
 import CommentItem from '@/components/profile/post/CommentItem.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
 const props = defineProps({
   post: {

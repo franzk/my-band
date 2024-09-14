@@ -7,11 +7,11 @@
       "bio": "Tranxen 200 est un groupe français connu pour son style de musique unique, qui combine des éléments de rock, de pop et d'électro.",
       "avatarUrl": "/fakedata/tranxen200/tranxen200-logo.png",
       "coverPictureUrl": "/fakedata/tranxen200/tranxen200-cover.png",
-      "youtubeVideoId": "ZTeqM5gciH8",
+      "video": { "youtubeId": "ZTeqM5gciH8" },
       "posts": [
         {
-          "id": 4,
-          "date": "1992-10-15",
+          "id": 6,
+          "date": "1992-10-16",
           "content": "Nan mais on a eu une scission ...",
           "comments": [
             {
@@ -31,6 +31,20 @@
               "date": "1992-09-16",
               "author": "@lionel_van_t200",
               "content": "Ben voilà, ... la divergence conceptuelle !!"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "date": "1992-10-15",
+          "content": "L'interview intégrale !!",
+          "video": { "youtubeId": "vTr9YDk_fcw" },
+          "comments": [
+            {
+              "id": 1,
+              "date": "1992-09-16",
+              "author": "@les_bidons_d_huile",
+              "content": "Les gars, vous êtes au top, mais la contrebasse en analogique c'est quand même mieux que dans un display rack v800 !"
             }
           ]
         },

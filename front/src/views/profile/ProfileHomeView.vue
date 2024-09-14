@@ -5,7 +5,7 @@
 
   <section id="video">
     <!--ProfileVideo /-->
-    <VideoPlayer :youtubeVideoId="profileStore.profile?.youtubeVideoId" />
+    <VideoPlayer :youtubeId="profileStore.profile?.video?.youtubeId" />
   </section>
 
   <section id="latest-posts">

@@ -2,7 +2,7 @@
   <vue-plyr>
     <div class="plyr__video-embed">
       <iframe
-        :src="`https://youtube-nocookie.com/embed/${youtubeVideoId}`"
+        :src="`https://youtube-nocookie.com/embed/${youtubeId}`"
         allowfullscreen
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       >
@@ -13,6 +13,6 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  youtubeVideoId: String
+  youtubeId: String
 })
 </script>

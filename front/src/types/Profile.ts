@@ -1,5 +1,6 @@
 import type { Picture } from '@/types/Picture'
-import type { Post } from './Post'
+import type { Post } from '@/types/Post'
+import type { Video } from '@/types/Video'
 
 export interface Profile {
   id: number
@@ -8,7 +9,7 @@ export interface Profile {
   bio: string
   avatarUrl: string
   coverPictureUrl: string
-  youtubeVideoId: string
+  video: Video
   posts: Post[]
   pictures: Picture[]
 }
