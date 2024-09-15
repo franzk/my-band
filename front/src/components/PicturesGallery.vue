@@ -7,6 +7,9 @@
 </template>
 
 <script setup lang="ts">
+import type { Picture } from '@/types/Picture'
+import type { PropType } from 'vue'
+
 const props = defineProps({
   pictures: {
     type: Array as PropType<Picture[]>,

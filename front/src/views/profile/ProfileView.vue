@@ -1,8 +1,8 @@
 <template>
-  {{ profileStore.error }}
   <section class="profile">
     <div class="profile-header">
-      <ProfileHeader />
+      <ProfileHeader v-if="route.name === 'profile-home'" />
+      <ProfileHeaderSmall v-else />
     </div>
     <div class="profile-nav">
       <ProfileNavBar />
@@ -21,11 +21,13 @@ import { useProfileStore } from '@/stores/profileStore'
 import { watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteUtils } from '@/utils/RouteUtils'
+import ProfileHeaderSmall from '@/components/profile/ProfileHeaderSmall.vue'
 
 const route = useRoute()
 const router = useRouter()
 const profileStore = useProfileStore()
 
+// fetch profile
 profileStore.fetchProfile(RouteUtils.firstIfArray(route.params.id))
 
 // error handling

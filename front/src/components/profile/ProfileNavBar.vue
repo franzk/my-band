@@ -1,6 +1,6 @@
 <template>
   <div class="chips-menu">
-    <RouterLink :to="{ name: 'profile-home' }">Posts</RouterLink>
+    <RouterLink :to="{ name: 'profile-home' }">Home</RouterLink>
     <RouterLink :to="{ name: 'profile-pictures' }">Pictures</RouterLink>
     <RouterLink :to="{ name: 'profile-videos' }">Videos</RouterLink>
     <RouterLink :to="{ name: 'profile-music' }">Music</RouterLink>

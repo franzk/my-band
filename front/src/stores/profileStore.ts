@@ -14,6 +14,9 @@ export const useProfileStore = defineStore('profileStore', () => {
    */
   const profile = ref<null | Profile>(null)
 
+  /**
+   * error status of the last fetch
+   */
   const error = ref<null | string>(null)
 
   /**
