@@ -57,13 +57,13 @@
         {
           "id": 5,
           "date": "1992-10-15",
-          "content": "En plein tournage de notre nouveau clip !! On hâte de partager ça avec vous !",
-          "picture": { "id": 1, "url": "/fakedata/tranxen200/t3.png" }
+          "content": "Salut à tous !! On va bientôt passer à la télé !"
         },
         {
           "id": 4,
           "date": "1992-10-13",
-          "content": "Salut à tous !! On va bientôt passer à la télé !"
+          "content": "En plein tournage de notre nouveau clip !! On hâte de partager ça avec vous !",
+          "picture": { "id": 1, "url": "/fakedata/tranxen200/t3.png" }
         },
         {
           "id": 3,

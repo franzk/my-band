@@ -6,9 +6,10 @@
 import { useRoute } from 'vue-router'
 import { usePicturesStore } from '@/stores/picturesStore'
 import PicturesGallery from '@/components/PicturesGallery.vue'
+import { RouteUtils } from '@/utils/RouteUtils'
 
 const route = useRoute()
 const picturesStore = usePicturesStore()
 
-picturesStore.fetchPictures(route.params.id)
+picturesStore.fetchPictures(RouteUtils.firstIfArray(route.params.id))
 </script>

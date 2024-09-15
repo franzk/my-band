@@ -16,17 +16,17 @@
 <script setup lang="ts">
 import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import ProfileNavBar from '@/components/profile/ProfileNavBar.vue'
-import { ErrorUtils } from '@/services/errorUtils'
+import { ErrorUtils } from '@/utils/ErrorUtils'
 import { useProfileStore } from '@/stores/profileStore'
-import { handleError, watch } from 'vue'
+import { watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { RouteUtils } from '@/utils/RouteUtils'
 
 const route = useRoute()
 const router = useRouter()
 const profileStore = useProfileStore()
 
-const id = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
-profileStore.fetchProfile(id)
+profileStore.fetchProfile(RouteUtils.firstIfArray(route.params.id))
 
 // error handling
 if (profileStore.error) {
