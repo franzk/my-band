@@ -29,11 +29,6 @@
     }}</span>
   </div>
 
-  <!-- bio -->
-  <section id="bio" :class="{ skeleton: !profileStore.profile }">
-    <p v-if="profileStore.profile?.bio">{{ profileStore.profile?.bio }}</p>
-  </section>
-
   <!-- actions -->
   <ProfileActions />
 </template>
@@ -97,16 +92,6 @@ const altAvatarPicture = computed(() =>
 
   .profile-slogan {
     font-size: $font-size-medium;
-  }
-}
-
-#bio {
-  padding: $spacing-small;
-  background-color: $ghost;
-  border-radius: $border-radius-small;
-  margin: 0 $spacing-medium $spacing-medium $spacing-medium;
-  p {
-    margin: 0;
   }
 }
 </style>

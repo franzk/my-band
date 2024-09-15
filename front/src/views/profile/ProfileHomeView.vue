@@ -1,4 +1,9 @@
 <template>
+  <!-- bio -->
+  <section id="bio" :class="{ skeleton: !profileStore.profile }">
+    <p v-if="profileStore.profile?.bio">{{ profileStore.profile?.bio }}</p>
+  </section>
+
   <section id="video">
     <VideoPlayer :youtubeId="profileStore.profile?.video?.youtubeId" />
   </section>
@@ -19,6 +24,16 @@ const profileStore = useProfileStore()
 <style lang="scss" scoped>
 .profile-header {
   height: $profile-header-height;
+}
+
+#bio {
+  padding: $spacing-small;
+  background-color: $ghost;
+  border-radius: $border-radius-small;
+  margin: 0 $spacing-medium $spacing-medium $spacing-medium;
+  p {
+    margin: 0;
+  }
 }
 
 #posts {
