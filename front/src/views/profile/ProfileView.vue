@@ -21,11 +21,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const profileStore = useProfileStore()
 
-const profileId = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
-
-if (profileId) {
-  profileStore.fetchProfile(profileId)
-}
+profileStore.fetchProfile(route.params.id)
 </script>
 
 <style lang="scss" scoped>
