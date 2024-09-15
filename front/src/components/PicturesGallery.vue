@@ -1,15 +1,18 @@
 <template>
   <ul>
-    <li v-for="picture in profileStore.profile?.pictures" :key="picture.id">
+    <li v-for="picture in props.pictures" :key="picture.id">
       <img :src="picture.url" />
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { useProfileStore } from '@/stores/profileStore'
-
-const profileStore = useProfileStore()
+const props = defineProps({
+  pictures: {
+    type: Array as PropType<Picture[]>,
+    default: () => []
+  }
+})
 </script>
 
 <style lang="scss" scoped>
