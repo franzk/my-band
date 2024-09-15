@@ -3,7 +3,7 @@
     <VideoPlayer :youtubeId="profileStore.profile?.video?.youtubeId" />
   </section>
 
-  <section id="latest-posts">
+  <section id="posts">
     <PostFeed />
   </section>
 </template>
@@ -21,7 +21,7 @@ const profileStore = useProfileStore()
   height: $profile-header-height;
 }
 
-#latest-posts {
+#posts {
   p {
     margin: 0 0 $spacing-medium $spacing-medium;
   }

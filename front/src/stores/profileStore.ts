@@ -14,17 +14,22 @@ export const useProfileStore = defineStore('profileStore', () => {
    */
   const profile = ref<null | Profile>(null)
 
-  const error = ref(null as string | null)
+  const error = ref<null | string>(null)
 
   /**
    * fetch a profile from the API
-   * @param id : l'id du profil à fetch
+   * @param id : the id of the profile to fetch
    */
-  const fetchProfile = async (id: number) => {
+  const fetchProfile = async (id: string) => {
     axios
       .get(`${profileAPIUrl}/${id}`)
-      .then((response) => (profile.value = response.data as Profile))
-      .catch((error) => (error.value = error.message))
+      .then((response) => {
+        profile.value = response.data as Profile
+        error.value = null
+      })
+      .catch((err) => {
+        error.value = err.status ? err.status : 'error'
+      })
   }
 
   return {

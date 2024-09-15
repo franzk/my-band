@@ -7,6 +7,8 @@ import ProfileLinksView from '@/views/profile/ProfileLinksView.vue'
 import ProfilePicturesView from '@/views/profile/ProfilePicturesView.vue'
 import ProfileVideosView from '@/views/profile/ProfileVideosView.vue'
 import ProfileMusicView from '@/views/profile/ProfileMusicView.vue'
+import NotFoundErrorView from '@/views/error/NotFoundErrorView.vue'
+import ErrorView from '@/views/error/ErrorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +54,20 @@ const router = createRouter({
       path: '/post/:id',
       name: 'post',
       component: PostView
+    },
+    {
+      path: '/404',
+      name: 'error-404',
+      component: NotFoundErrorView
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/404' // Redirect all non existing routes to 404
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: ErrorView
     }
   ]
 })

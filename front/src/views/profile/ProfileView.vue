@@ -1,4 +1,5 @@
 <template>
+  {{ profileStore.error }}
   <section class="profile">
     <div class="profile-header">
       <ProfileHeader />
@@ -15,13 +16,35 @@
 <script setup lang="ts">
 import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import ProfileNavBar from '@/components/profile/ProfileNavBar.vue'
+import { ErrorUtils } from '@/services/errorUtils'
 import { useProfileStore } from '@/stores/profileStore'
-import { useRoute } from 'vue-router'
+import { handleError, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const profileStore = useProfileStore()
 
-profileStore.fetchProfile(route.params.id)
+const id = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
+profileStore.fetchProfile(id)
+
+// error handling
+if (profileStore.error) {
+  showErrorPage(profileStore.error)
+}
+
+watch(
+  () => profileStore.error,
+  (error) => {
+    if (error) {
+      showErrorPage(error)
+    }
+  }
+)
+
+function showErrorPage(error: string) {
+  router.push({ name: ErrorUtils.errorRouteName(error) })
+}
 </script>
 
 <style lang="scss" scoped>
