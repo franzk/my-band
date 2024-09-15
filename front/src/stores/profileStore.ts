@@ -3,22 +3,33 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
 
+const profileAPIUrl = 'http://localhost:3000/profiles'
+
+/**
+ * Store to manage the profile data
+ */
 export const useProfileStore = defineStore('profileStore', () => {
   /**
-   * the currently displayed profile
+   * currently displayed profile
    */
   const profile = ref<null | Profile>(null)
 
+  const error = ref(null as string | null)
+
   /**
    * fetch a profile from the API
-   * @param id : the id of the profile to fetch
+   * @param id : l'id du profil à fetch
    */
-  const fetchProfile = async (id: string) => {
-    const response = await axios.get(`http://localhost:3000/profiles/${id}`)
-    const data = await response.data
-
-    profile.value = data as Profile
+  const fetchProfile = async (id: number) => {
+    axios
+      .get(`${profileAPIUrl}/${id}`)
+      .then((response) => (profile.value = response.data as Profile))
+      .catch((error) => (error.value = error.message))
   }
 
-  return { profile, fetchProfile }
+  return {
+    profile,
+    error,
+    fetchProfile
+  }
 })
