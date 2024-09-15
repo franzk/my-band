@@ -1,14 +1,15 @@
 <template>
   Pictures
   {{ route.params.id }}
+  {{ picturesStore.pictures }}
 </template>
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-// import { UsePicturesStore } from '@/stores/picturesStore'
+import { usePicturesStore } from '@/stores/picturesStore'
 
 const route = useRoute()
-// const picturesStore = UsePicturesStore()
+const picturesStore = usePicturesStore()
 
-// picturesStore.fetchPictures(route.params.id)
+picturesStore.fetchPictures(route.params.id)
 </script>
