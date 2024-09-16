@@ -1,39 +1,46 @@
 <template>
-  <div class="chips-menu">
+  <div class="profile-navbar">
     <RouterLink :to="{ name: 'profile-home' }"><IconHome /></RouterLink>
-    <RouterLink :to="{ name: 'profile-pictures' }">P</RouterLink>
-    <RouterLink :to="{ name: 'profile-videos' }"><IconPlayCircle /></RouterLink>
-    <RouterLink :to="{ name: 'profile-music' }">M</RouterLink>
-    <RouterLink :to="{ name: 'profile-links' }">L</RouterLink>
+    <RouterLink :to="{ name: 'profile-pictures' }"><IconPicture /></RouterLink>
+    <RouterLink :to="{ name: 'profile-videos' }"><IconVideo /></RouterLink>
+    <RouterLink :to="{ name: 'profile-music' }"><IconMusic /></RouterLink>
+    <RouterLink :to="{ name: 'profile-links' }"><IconLink /></RouterLink>
   </div>
 </template>
 
 <script setup lang="ts">
 import IconHome from '@/components/icons/IconHome.vue'
-import IconPlayCircle from '@/components/icons/IconPlayCircle.vue'
+import IconPicture from '@/components/icons/IconPicture.vue'
+import IconVideo from '@/components/icons/IconVideo.vue'
+import IconMusic from '@/components/icons/IconMusic.vue'
+import IconLink from '@/components/icons/IconLink.vue'
 </script>
 
 <style lang="scss" scoped>
-.chips-menu {
+.profile-navbar {
   display: flex;
-  gap: $spacing-small;
+  justify-content: center;
+  gap: $spacing-medium;
+
   margin: $spacing-small;
   padding: $spacing-small;
-  background-color: $black;
   border-radius: $border-radius-small;
+  background-color: $black;
+
   a {
     text-decoration: none;
     color: $primary;
-    padding: $spacing-small;
-    border-radius: $border-radius-xxl;
     background-color: $secondary;
+
+    padding: $spacing-medium;
+    border-radius: $border-radius-xxl;
+    border: $border-size-small solid $primary;
+    height: 24px;
   }
+
   a.active {
     background-color: $primary;
     color: $secondary;
-  }
-  .router-link-exact-active {
-    border-bottom: 1px solid #123456;
   }
 }
 </style>

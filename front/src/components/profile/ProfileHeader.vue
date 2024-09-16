@@ -92,6 +92,7 @@ const altAvatarPicture = computed(() =>
 
   .profile-slogan {
     font-size: $font-size-medium;
+    margin-bottom: 0;
   }
 }
 </style>

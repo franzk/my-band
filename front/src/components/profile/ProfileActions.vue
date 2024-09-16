@@ -23,6 +23,8 @@ const followProfile = () => {
   display: flex;
   justify-content: center;
   gap: $spacing-medium;
+  margin-top: $spacing-large;
+  margin-bottom: $spacing-small;
 
   button {
     padding: $spacing-small $spacing-medium;
