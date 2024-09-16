@@ -6,7 +6,7 @@ import type { Video } from '@/types/Video'
  * Profile type
  */
 export interface Profile {
-  id: number
+  id: string
   name: string
   slogan: string
   bio: string

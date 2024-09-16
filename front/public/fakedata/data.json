@@ -10,24 +10,24 @@
       "video": { "youtubeId": "ZTeqM5gciH8" },
       "posts": [
         {
-          "id": 7,
+          "id": "t200-p7",
           "date": "1992-10-16",
           "content": "Nan mais on a eu une scission ...",
           "comments": [
             {
-              "id": 1,
+              "id": "t200-p7-c1",
               "date": "1992-09-16",
               "author": "@les_bidons_d_huile",
               "content": "Oh ben non ! Trop dommage !"
             },
             {
-              "id": 2,
+              "id": "t200-p7-c2",
               "date": "1992-09-16",
               "author": "@topfan42",
               "content": "Nan mais Joël, en même temps, c'était complètement glucose de ta part !"
             },
             {
-              "id": 3,
+              "id": "t200-p7-c3",
               "date": "1992-09-16",
               "author": "@lionel_van_t200",
               "content": "Ben voilà, ... la divergence conceptuelle !!"
@@ -35,13 +35,13 @@
           ]
         },
         {
-          "id": 6,
+          "id": "t200-p6",
           "date": "1992-10-15",
           "content": "L'interview intégrale !!",
           "video": { "youtubeId": "vTr9YDk_fcw" },
           "comments": [
             {
-              "id": 1,
+              "id": "t200-p6-c1",
               "date": "1992-09-16",
               "author": "@les_bidons_d_huile",
               "content": "Les gars, vous êtes au top, mais la contrebasse en analogique c'est quand même mieux que dans un display rack v800 !"
@@ -49,41 +49,35 @@
           ]
         },
         {
-          "id": 5,
+          "id": "t200-p5",
           "date": "1992-10-15",
           "content": "On y est ! On entre dans le game !",
-          "picture": { "id": 1, "url": "/fakedata/tranxen200/top50.png" }
+          "picture": { "id": "t200-p5-i1", "url": "/fakedata/tranxen200/top50.png" }
         },        
         {
-          "id": 5,
+          "id": "t200-p4",
           "date": "1992-10-15",
           "content": "Salut à tous !! On va bientôt passer à la télé !"
         },
         {
-          "id": 4,
+          "id": "t200-p3",
           "date": "1992-10-13",
           "content": "En plein tournage de notre nouveau clip !! On hâte de partager ça avec vous !",
-          "picture": { "id": 1, "url": "/fakedata/tranxen200/t3.png" }
+          "picture": { "id": "t200-p3-i1", "url": "/fakedata/tranxen200/t3.png" }
         },
         {
-          "id": 3,
+          "id": "t200-p2",
           "date": "1992-10-11",
           "content": "Tranxen 200 vous présente son nouvel album :  Vice & Versa. Attention, ça va être glucose !",
-          "picture": { "id": 1, "url": "/fakedata/tranxen200/viceversa.png" }
+          "picture": { "id": "t200-p2-i1", "url": "/fakedata/tranxen200/viceversa.png" }
         },
         { 
-          "id": 2, 
+          "id": "t200-p1", 
           "date": "1992-09-21", 
           "content": "Coucou c'est nous !", 
-          "picture": { "id": 1, "url": "/fakedata/tranxen200/t1.jpg" } 
+          "picture": { "id": "t200-p1-i1", "url": "/fakedata/tranxen200/t1.jpg" } 
         },
-        { "id": 1, "date": "1992-09-20", "content": "Bienvenue sur notre nouvel espace MyBand !" }
-      ],
-      "pictures": [
-        { "id": 1, "url": "/fakedata/tranxen200/t1.jpg" },
-        { "id": 2, "url": "/fakedata/tranxen200/t2.jpg" },
-        { "id": 3, "url": "/fakedata/tranxen200/t3.png" },
-        { "id": 4, "url": "/fakedata/tranxen200/t4.jpg" }
+        { "id": "t200-p0", "date": "1992-09-20", "content": "Bienvenue sur notre nouvel espace MyBand !" }
       ]
     }
   ]

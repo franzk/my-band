@@ -15,8 +15,10 @@ export const usePicturesStore = defineStore('picturesStore', () => {
   const fetchPictures = async (profileId: string) => {
     const response = await axios.get(`http://localhost:3000/profiles/${profileId}`)
     const profile = response.data as Profile
-    pictures.value = (profile.posts.filter((p) => p.picture).map((p) => p.picture) ||
-      []) as Picture[]
+    pictures.value = (profile.posts
+      .filter((p) => p.picture)
+      .map((p) => Object.assign({}, p.picture, { relatedPostId: p.id })) || []) as Picture[]
+    console.log(pictures.value)
   }
 
   return { pictures, fetchPictures }

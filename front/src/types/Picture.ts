@@ -2,6 +2,7 @@
  * Picture type
  */
 export interface Picture {
-  id: number
+  id: string
   url: string
+  relatedPostId?: string
 }

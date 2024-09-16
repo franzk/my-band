@@ -24,13 +24,11 @@ import IconLink from '@/components/icons/IconLink.vue'
 
   margin: 0;
   padding: $spacing-small;
-  // border-radius: $border-radius-small;
   background-color: $background;
 
   a {
     text-decoration: none;
     color: $primary;
-    // background-color: $secondary;
     background: linear-gradient(135deg, $secondary, #d45959);
 
     padding: $spacing-medium;
