@@ -1,11 +1,11 @@
 <template>
-  <div class="profile-navbar">
+  <nav class="profile-navbar">
     <RouterLink :to="{ name: 'profile-home' }"><IconHome /></RouterLink>
     <RouterLink :to="{ name: 'profile-pictures' }"><IconPicture /></RouterLink>
     <RouterLink :to="{ name: 'profile-videos' }"><IconVideo /></RouterLink>
     <RouterLink :to="{ name: 'profile-music' }"><IconMusic /></RouterLink>
     <RouterLink :to="{ name: 'profile-links' }"><IconLink /></RouterLink>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -22,15 +22,16 @@ import IconLink from '@/components/icons/IconLink.vue'
   justify-content: center;
   gap: $spacing-medium;
 
-  margin: $spacing-small;
+  margin: 0;
   padding: $spacing-small;
-  border-radius: $border-radius-small;
-  background-color: $black;
+  // border-radius: $border-radius-small;
+  background-color: $background;
 
   a {
     text-decoration: none;
     color: $primary;
-    background-color: $secondary;
+    // background-color: $secondary;
+    background: linear-gradient(135deg, $secondary, #d45959);
 
     padding: $spacing-medium;
     border-radius: $border-radius-xxl;

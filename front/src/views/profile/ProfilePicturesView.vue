@@ -1,5 +1,8 @@
 <template>
   <PicturesGallery :pictures="picturesStore.pictures || []" />
+  <PicturesGallery :pictures="picturesStore.pictures || []" />
+  <PicturesGallery :pictures="picturesStore.pictures || []" />
+  <PicturesGallery :pictures="picturesStore.pictures || []" />
 </template>
 
 <script setup lang="ts">
