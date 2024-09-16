@@ -1,5 +1,8 @@
+/**
+ * Comment of a post
+ */
 export interface Comment {
-  id: number
+  id: string
   date: Date
   author: string
   content: string

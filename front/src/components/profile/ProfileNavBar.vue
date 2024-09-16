@@ -1,59 +1,45 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <RouterLink :to="{ name: 'profile-home' }">
-          <IconHome class="nav-icon" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink :to="{ name: 'profile-media' }">
-          <IconPlayCircle class="nav-icon" />
-        </RouterLink>
-      </li>
-
-      <li>
-        <RouterLink :to="{ name: 'profile-about' }">
-          <IconGroup class="nav-icon" />
-        </RouterLink>
-      </li>
-    </ul>
+  <nav class="profile-navbar">
+    <RouterLink :to="{ name: 'profile-home' }"><IconHome /></RouterLink>
+    <RouterLink :to="{ name: 'profile-pictures' }"><IconPicture /></RouterLink>
+    <RouterLink :to="{ name: 'profile-videos' }"><IconVideo /></RouterLink>
+    <RouterLink :to="{ name: 'profile-music' }"><IconMusic /></RouterLink>
+    <RouterLink :to="{ name: 'profile-links' }"><IconLink /></RouterLink>
   </nav>
 </template>
 
 <script setup lang="ts">
 import IconHome from '@/components/icons/IconHome.vue'
-import IconGroup from '../icons/IconGroup.vue'
-import IconPlayCircle from '../icons/IconPlayCircle.vue'
+import IconPicture from '@/components/icons/IconPicture.vue'
+import IconVideo from '@/components/icons/IconVideo.vue'
+import IconMusic from '@/components/icons/IconMusic.vue'
+import IconLink from '@/components/icons/IconLink.vue'
 </script>
 
 <style lang="scss" scoped>
-nav {
-  position: sticky;
-  top: 0;
-  height: $profile-header-height;
-  z-index: 1;
+.profile-navbar {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-medium;
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    list-style: none;
-    margin: 0;
-    padding: $spacing-small $spacing-small 0 0;
+  margin: 0;
+  padding: $spacing-small;
+  background-color: $background;
 
-    li {
-      margin-bottom: $spacing-small;
-    }
+  a {
+    text-decoration: none;
+    color: $primary;
+    background: linear-gradient(135deg, $secondary, #d45959);
+
+    padding: $spacing-medium;
+    border-radius: $border-radius-xxl;
+    border: $border-size-small solid $primary;
+    height: 24px;
   }
 
-  .nav-icon {
-    width: $profile-nav-icon-size;
-    height: $profile-nav-icon-size;
-    color: $primary;
-    background-color: $secondary;
-    border-radius: 50%;
-    padding: $spacing-small;
+  a.active {
+    background-color: $primary;
+    color: $secondary;
   }
 }
 </style>

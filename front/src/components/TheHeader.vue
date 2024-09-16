@@ -7,7 +7,7 @@
     </span>
     <span class="search"><SearchBar /></span>
     <span class="absolute-icon user">
-      <RouterLink to="/account">
+      <RouterLink to="/">
         <IconUser />
       </RouterLink>
     </span>

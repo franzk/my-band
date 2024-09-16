@@ -1,4 +1,4 @@
-// permet de limiter le nombre de lignes d'un texte et d'ajouter des points de suspension
+// cut text with ellipsis
 @mixin line-clamp($lines, $line-height) {
   display: block;
   display: -webkit-box;

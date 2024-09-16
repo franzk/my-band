@@ -1,3 +1,5 @@
+@import '@/assets/scss/_keyframes.scss';
+
 // colors
 $primary: #ffffffdd;
 $secondary: #aa1a1acc;
@@ -8,18 +10,28 @@ $ghost: #ffffff11;
 $background: #000000ee;
 $black: #000000;
 
+$skeleton: linear-gradient(
+  90deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(255, 255, 255, 0.2) 50%,
+  rgba(255, 255, 255, 0) 100%
+);
+
 // spacings
 $spacing-tiny: 0.25rem;
 $spacing-small: 0.5rem;
 $spacing-medium: 1rem;
+$spacing-large: 2rem;
 
 // border
+$border-size-tiny: 1px;
+$border-size-small: 2px;
+
 $border-radius-xs: 0.125rem;
 $border-radius-tiny: 0.25rem;
 $border-radius-small: 0.5rem;
 $border-radius: 1rem;
-$border-size-tiny: 1px;
-$border-size-small: 2px;
+$border-radius-xxl: 5.5rem;
 
 // font
 $font-size-small: 0.75rem;
@@ -30,9 +42,14 @@ $font-size-xxl: 2rem;
 
 // elements sizes
 $search-bar-height: 2.5rem;
+
 //  -- profile
-$profile-header-height: 17rem;
+$profile-header-height: 16rem;
+$profile-header-height-small: 3rem;
+
 $profile-header-cover-height: 10rem;
 $profile-avatar-top: 6rem;
 $profile-nav-icon-size: 2rem;
+
 $profile-avatar-size: 5rem;
+$profile-avatar-size-small: 3rem;

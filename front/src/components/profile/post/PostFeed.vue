@@ -1,9 +1,15 @@
 <template>
-  <ul class="post-list">
+  <ul v-if="profileStore.profile" class="post-list">
     <li v-for="item in profileStore.profile?.posts" :key="item.id">
       <PostItem :post="item" />
     </li>
   </ul>
+  <div v-else>
+    <!-- placeholders -->
+    <PostItem :skeleton="true" />
+    <PostItem :skeleton="true" />
+    <PostItem :skeleton="true" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -16,7 +22,8 @@ const profileStore = useProfileStore()
 <style lang="scss" scoped>
 .post-list {
   list-style: none;
-  padding: $spacing-small;
+  padding: $spacing-small $spacing-small 0 $spacing-small;
+  margin-bottom: 0;
 
   li {
     margin: $spacing-tiny;

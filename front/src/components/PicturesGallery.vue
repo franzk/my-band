@@ -1,15 +1,23 @@
 <template>
   <ul>
-    <li v-for="picture in profileStore.profile?.pictures" :key="picture.id">
-      <img :src="picture.url" />
+    <li v-for="picture in props.pictures" :key="picture.id">
+      <RouterLink :to="{ name: 'post', params: { id: picture.relatedPostId } }">
+        <img :src="picture.url" />
+      </RouterLink>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { useProfileStore } from '@/stores/profileStore'
+import type { Picture } from '@/types/Picture'
+import type { PropType } from 'vue'
 
-const profileStore = useProfileStore()
+const props = defineProps({
+  pictures: {
+    type: Array as PropType<Picture[]>,
+    default: () => []
+  }
+})
 </script>
 
 <style lang="scss" scoped>

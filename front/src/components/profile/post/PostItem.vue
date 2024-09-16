@@ -1,15 +1,30 @@
 <template>
   <article class="post-item">
-    <div class="info">
-      <img :src="profileAvatarUrl" alt="" />
+    <!-- text -->
+    <div class="text" :class="{ skeleton: skeleton }">
+      <p>
+        {{ post.content }}
+      </p>
+    </div>
+
+    <!-- image -->
+    <div v-if="post.picture?.url" class="image">
+      <RouterLink :to="{ name: 'post', params: { id: post.id } }">
+        <img :src="post.picture.url" alt=""
+      /></RouterLink>
+    </div>
+
+    <!-- video -->
+    <div v-if="post.video?.youtubeId" class="video">
+      <VideoPlayer :youtubeId="post.video.youtubeId" />
+    </div>
+
+    <!-- date -->
+    <div class="info" :class="{ skeleton: skeleton }">
       <p>{{ formattedDate }}</p>
     </div>
-    <div class="text">
-      <p>{{ post.content }}</p>
-    </div>
-    <div v-if="post.picture?.url" class="image">
-      <img :src="post.picture.url" alt="" />
-    </div>
+
+    <!-- comments -->
     <div v-if="post.comments" @click="showComments = !showComments">
       <p class="comments-count">{{ post.comments.length }} commentaires</p>
       <transition name="expand">
@@ -29,22 +44,29 @@ import type { Post } from '@/types/Post'
 import dayjs from 'dayjs'
 import 'dayjs/locale/fr'
 import CommentItem from '@/components/profile/post/CommentItem.vue'
+import VideoPlayer from '@/components/VideoPlayer.vue'
 
 const props = defineProps({
   post: {
     type: Object as () => Post,
-    required: true
+    default: () => ({})
   },
   profileAvatarUrl: {
     type: String,
     default: ''
+  },
+  skeleton: {
+    type: Boolean,
+    default: false
   }
 })
 
 const showComments = ref(false)
 
 dayjs.locale('fr')
-const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
+const formattedDate = computed(() =>
+  props.post.date ? dayjs(props.post.date).format('D MMMM YYYY') : ''
+)
 </script>
 
 <style lang="scss" scoped>
@@ -77,6 +99,9 @@ const formattedDate = computed(() => dayjs(props.date).format('D MMMM YYYY'))
 
   .text {
     flex: 1;
+    p {
+      margin: 0 0 $spacing-small 0;
+    }
   }
 
   .image {
