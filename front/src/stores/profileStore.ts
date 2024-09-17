@@ -28,6 +28,8 @@ export const useProfileStore = defineStore('profileStore', () => {
       .get(`${profileAPIUrl}/${id}`)
       .then((response) => {
         profile.value = response.data as Profile
+        // TODO temporary - do this in the back
+        profile.value.posts = profile.value.posts ? [profile.value.posts[0]] : []
         error.value = null
       })
       .catch((err) => {

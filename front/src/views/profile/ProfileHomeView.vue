@@ -9,8 +9,10 @@
   </section>
 
   <section id="posts">
-    <PostFeed />
+    <PostFeed :posts="profileStore.profile?.posts" />
   </section>
+
+  <RouterLink :to="{ name: 'profile-posts' }">View all posts</RouterLink>
 </template>
 
 <script setup lang="ts">

@@ -18,7 +18,6 @@ export const usePicturesStore = defineStore('picturesStore', () => {
     pictures.value = (profile.posts
       .filter((p) => p.picture)
       .map((p) => Object.assign({}, p.picture, { relatedPostId: p.id })) || []) as Picture[]
-    console.log(pictures.value)
   }
 
   return { pictures, fetchPictures }

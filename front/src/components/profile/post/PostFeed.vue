@@ -1,6 +1,6 @@
 <template>
-  <ul v-if="profileStore.profile" class="post-list">
-    <li v-for="item in profileStore.profile?.posts" :key="item.id">
+  <ul v-if="postList" class="post-list">
+    <li v-for="item in postList" :key="item.id">
       <PostItem :post="item" />
     </li>
   </ul>
@@ -15,8 +15,32 @@
 <script setup lang="ts">
 import { useProfileStore } from '@/stores/profileStore'
 import PostItem from '@/components/profile/post/PostItem.vue'
+import type { Post } from '@/types/Post'
+import { onMounted, ref, type PropType } from 'vue'
+import { usePostsStore } from '@/stores/postsStore'
 
-const profileStore = useProfileStore()
+const props = defineProps({
+  profileId: {
+    type: String,
+    default: undefined
+  },
+  posts: {
+    type: Array as PropType<Post[]> | undefined,
+    default: undefined
+  }
+})
+
+const postList = ref<Post[]>([])
+
+onMounted(() => {
+  if (props.posts) {
+    postList.value = props.posts
+  } else if (props.profileId) {
+    const postsStore = usePostsStore()
+    postsStore.fetchPosts(props.profileId)
+    postList.value = postsStore.posts || []
+  }
+})
 </script>
 
 <style lang="scss" scoped>

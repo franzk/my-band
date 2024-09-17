@@ -1,6 +1,6 @@
 <template>
   <nav class="profile-navbar">
-    <RouterLink :to="{ name: 'profile-home' }"><IconHome /></RouterLink>
+    <RouterLink :to="{ name: 'profile-posts' }"><IconActivity /></RouterLink>
     <RouterLink :to="{ name: 'profile-pictures' }"><IconPicture /></RouterLink>
     <RouterLink :to="{ name: 'profile-videos' }"><IconVideo /></RouterLink>
     <RouterLink :to="{ name: 'profile-music' }"><IconMusic /></RouterLink>
@@ -9,11 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import IconHome from '@/components/icons/IconHome.vue'
 import IconPicture from '@/components/icons/IconPicture.vue'
 import IconVideo from '@/components/icons/IconVideo.vue'
 import IconMusic from '@/components/icons/IconMusic.vue'
 import IconLink from '@/components/icons/IconLink.vue'
+import IconActivity from '@/components/icons/IconActivity.vue'
 </script>
 
 <style lang="scss" scoped>

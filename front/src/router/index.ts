@@ -9,6 +9,7 @@ import ProfileVideosView from '@/views/profile/ProfileVideosView.vue'
 import ProfileMusicView from '@/views/profile/ProfileMusicView.vue'
 import NotFoundErrorView from '@/views/error/NotFoundErrorView.vue'
 import ErrorView from '@/views/error/ErrorView.vue'
+import ProfilePostsView from '@/views/profile/ProfilePostsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
           path: '',
           name: 'profile-home',
           component: ProfileHomeView
+        },
+        {
+          path: '/profile/:id/posts',
+          name: 'profile-posts',
+          component: ProfilePostsView
         },
         {
           path: '/profile/:id/pictures',
