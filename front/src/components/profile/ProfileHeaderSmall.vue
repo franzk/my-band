@@ -1,14 +1,19 @@
 <template>
   <div class="profile-header-small">
     <div class="profile-avatar">
-      <img :src="profileStore.profile?.avatarUrl" :alt="`${profileStore.profile?.name} avatar`" />
+      <RouterLink :to="{ name: 'profile-home', params: { id: profileStore.profile?.id } }">
+        <img :src="profileStore.profile?.avatarUrl" :alt="`${profileStore.profile?.name} avatar`" />
+      </RouterLink>
     </div>
-    <h1 class="lato-black profile-title">{{ profileStore.profile?.name }}</h1>
+    <h1 class="lato-black profile-title" ref="title">
+      qdfsqsdfqsdfqsfqsfqsdqfdsv {{ profileStore.profile?.name }}
+    </h1>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useProfileStore } from '@/stores/profileStore'
+import { RouterLink } from 'vue-router'
 
 const profileStore = useProfileStore()
 </script>
@@ -18,9 +23,9 @@ const profileStore = useProfileStore()
   height: $profile-header-height-small;
   display: flex;
   flex-direction: row;
-  width: 100%;
   padding: $spacing-small;
   gap: $spacing-small;
+  overflow: hidden;
 
   .profile-avatar {
     width: $profile-avatar-size-small;
@@ -28,7 +33,7 @@ const profileStore = useProfileStore()
     border-radius: 50%;
     overflow: hidden;
     border: $border-size-small solid $primary;
-    top: $profile-avatar-top;
+    flex-shrink: 0;
     img {
       width: 100%;
       height: 100%;
@@ -38,8 +43,11 @@ const profileStore = useProfileStore()
 
   .profile-title {
     margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
     align-content: center;
     margin-block: 0;
+    font-size: 1.5rem;
   }
 }
 </style>
