@@ -6,7 +6,7 @@
       </RouterLink>
     </div>
     <h1 class="lato-black profile-title" ref="title">
-      qdfsqsdfqsdfqsfqsfqsdqfdsv {{ profileStore.profile?.name }}
+      {{ profileStore.profile?.name }}
     </h1>
   </div>
 </template>
