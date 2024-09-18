@@ -78,6 +78,7 @@ const formattedDate = computed(() =>
   padding: $spacing-small;
   border-radius: $border-radius-tiny;
   border: $border-size-tiny solid $shadow;
+  box-shadow: 5px 5px 10px $box-shadow-color;
 
   .info {
     display: flex;

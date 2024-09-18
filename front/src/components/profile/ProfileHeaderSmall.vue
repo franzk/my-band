@@ -26,6 +26,7 @@ const profileStore = useProfileStore()
   padding: $spacing-small;
   gap: $spacing-small;
   overflow: hidden;
+  background: $background;
 
   .profile-avatar {
     width: $profile-avatar-size-small;

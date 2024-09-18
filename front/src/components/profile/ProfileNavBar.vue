@@ -27,19 +27,28 @@ import IconActivity from '@/components/icons/IconActivity.vue'
   background-color: $background;
 
   a {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
     text-decoration: none;
     color: $primary;
     background: linear-gradient(135deg, $secondary, #d45959);
 
-    padding: $spacing-medium;
+    padding: $spacing-small;
     border-radius: $border-radius-xxl;
     border: $border-size-small solid $primary;
-    height: 24px;
+    height: $profile-nav-icon-size;
+    width: $profile-nav-icon-size;
   }
 
   a.active {
     background-color: $primary;
     color: $secondary;
+  }
+
+  svg {
+    flex: 1;
   }
 }
 </style>
