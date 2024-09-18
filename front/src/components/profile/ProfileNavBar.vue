@@ -3,7 +3,7 @@
     <RouterLink :to="{ name: 'profile-posts' }"><IconActivity /></RouterLink>
     <RouterLink :to="{ name: 'profile-pictures' }"><IconPicture /></RouterLink>
     <RouterLink :to="{ name: 'profile-videos' }"><IconVideo /></RouterLink>
-    <RouterLink :to="{ name: 'profile-music' }"><IconMusic /></RouterLink>
+    <RouterLink :to="{ name: 'profile-events' }"><IconEvent /></RouterLink>
     <RouterLink :to="{ name: 'profile-links' }"><IconLink /></RouterLink>
   </nav>
 </template>
@@ -11,9 +11,9 @@
 <script setup lang="ts">
 import IconPicture from '@/components/icons/IconPicture.vue'
 import IconVideo from '@/components/icons/IconVideo.vue'
-import IconMusic from '@/components/icons/IconMusic.vue'
 import IconLink from '@/components/icons/IconLink.vue'
 import IconActivity from '@/components/icons/IconActivity.vue'
+import IconEvent from '../icons/IconEvent.vue'
 </script>
 
 <style lang="scss" scoped>

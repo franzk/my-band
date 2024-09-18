@@ -6,7 +6,7 @@ import PostView from '@/views/PostView.vue'
 import ProfileLinksView from '@/views/profile/ProfileLinksView.vue'
 import ProfilePicturesView from '@/views/profile/ProfilePicturesView.vue'
 import ProfileVideosView from '@/views/profile/ProfileVideosView.vue'
-import ProfileMusicView from '@/views/profile/ProfileMusicView.vue'
+import ProfileEventsView from '@/views/profile/ProfileEventsView.vue'
 import NotFoundErrorView from '@/views/error/NotFoundErrorView.vue'
 import ErrorView from '@/views/error/ErrorView.vue'
 import ProfilePostsView from '@/views/profile/ProfilePostsView.vue'
@@ -45,9 +45,9 @@ const router = createRouter({
           component: ProfileVideosView
         },
         {
-          path: '/profile/:id/music',
-          name: 'profile-music',
-          component: ProfileMusicView
+          path: '/profile/:id/events',
+          name: 'profile-events',
+          component: ProfileEventsView
         },
         {
           path: '/profile/:id/content/links',

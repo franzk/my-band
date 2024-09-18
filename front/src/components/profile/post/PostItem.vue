@@ -1,5 +1,5 @@
 <template>
-  <article class="post-item">
+  <article class="post-item box-shadow">
     <!-- text -->
     <div class="text" :class="{ skeleton: skeleton }">
       <p>
@@ -77,8 +77,6 @@ const formattedDate = computed(() =>
   background-color: $ghost;
   padding: $spacing-small;
   border-radius: $border-radius-tiny;
-  border: $border-size-tiny solid $shadow;
-  box-shadow: 5px 5px 10px $box-shadow-color;
 
   .info {
     display: flex;

@@ -1,13 +1,13 @@
 <template>
-  <div class="profile-music-view">
-    <h1>Music</h1>
+  <div class="profile-events-view">
+    <h1>Events</h1>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.profile-music-view {
+.profile-events-view {
   text-align: center;
   margin: $spacing-large;
 }
