@@ -16,7 +16,7 @@
 import EventCard from '@/components/profile/event/EventCard.vue'
 import type { Event } from '@/types/Event'
 import { computed, onMounted, type PropType } from 'vue'
-import { useEventsStore } from '@/stores/eventsStore'
+import { useEventStore } from '@/stores/eventStore'
 
 const props = defineProps({
   profileId: {
@@ -29,13 +29,13 @@ const props = defineProps({
   }
 })
 
-const eventsStore = useEventsStore()
+const eventStore = useEventStore()
 
-const eventList = computed(() => props.events || eventsStore.events)
+const eventList = computed(() => props.events || eventStore.events)
 
 onMounted(() => {
   if (!props.events && props.profileId) {
-    eventsStore.fetchEvents(props.profileId)
+    eventStore.getEvents(props.profileId)
   }
 })
 </script>

@@ -5,18 +5,18 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 /**
- * Store to manage the posts data
- * WARNING : this store is not complete, the fetchPosts method returns mock data
- * you have to implement the fetchPosts method to fetch the posts from the API
+ * Store to manage the posts
+ * WARNING : this store is not complete, the getPosts method returns mock data
+ * you have to implement the getPosts method to fetch the posts from the API
  */
-export const usePostsStore = defineStore('postsStore', () => {
+export const usePostStore = defineStore('postStore', () => {
   const posts = ref<Post[] | null>(null)
 
-  const fetchPosts = async (profileId: string) => {
+  const getPosts = async (profileId: string) => {
     const response = await axios.get(`http://localhost:3000/profiles/${profileId}`)
     const profile = response.data as Profile
     posts.value = profile.posts
   }
 
-  return { posts, fetchPosts }
+  return { posts, getPosts }
 })

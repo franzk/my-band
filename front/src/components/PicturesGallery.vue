@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="picture in props.pictures" :key="picture.id">
+    <li v-for="picture in pictures" :key="picture.id">
       <RouterLink :to="{ name: 'post', params: { id: picture.relatedPostId } }">
         <img :src="picture.url" class="box-shadow" />
       </RouterLink>

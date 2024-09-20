@@ -16,7 +16,7 @@
 import PostItem from '@/components/profile/post/PostItem.vue'
 import type { Post } from '@/types/Post'
 import { computed, onMounted, type PropType } from 'vue'
-import { usePostsStore } from '@/stores/postsStore'
+import { usePostStore } from '@/stores/postStore'
 
 const props = defineProps({
   profileId: {
@@ -29,13 +29,13 @@ const props = defineProps({
   }
 })
 
-const postsStore = usePostsStore()
+const postStore = usePostStore()
 
-const postList = computed(() => props.posts || postsStore.posts)
+const postList = computed(() => props.posts || postStore.posts)
 
 onMounted(() => {
   if (!props.posts && props.profileId) {
-    postsStore.fetchPosts(props.profileId)
+    postStore.getPosts(props.profileId)
   }
 })
 </script>
