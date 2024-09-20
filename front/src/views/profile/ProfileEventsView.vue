@@ -1,10 +1,16 @@
 <template>
   <div class="profile-events-view">
-    <h1>Events</h1>
+    <EventFeed :profileId="RouteUtils.firstIfArray(route.params.id)" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import EventFeed from '@/components/profile/event/EventFeed.vue'
+import { useRoute } from 'vue-router'
+import { RouteUtils } from '@/utils/RouteUtils'
+
+const route = useRoute()
+</script>
 
 <style lang="scss" scoped>
 .profile-events-view {
