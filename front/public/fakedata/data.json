@@ -80,7 +80,9 @@
         { "id": "t200-p0", "date": "1992-09-20", "content": "Bienvenue sur notre nouvel espace MyBand !" }
       ],
       "events": [
-        { "id":"t200-d1", "date": "1992-10-10", "eventDate":"1992-10-22", "title": "Tranxen en concert à la Cigale [!! Annulé !!]", "detail": "Le concert des TRanxen 200 à la cigale est annulé pour cause de scission", 
+        { "id":"t200-d1", "date": "1992-10-10", "eventDate":"1992-10-22", "title": "Tranxen en concert à la Cigale [!! Annulé !!]", 
+        "detail": "Le concert des Tranxen 200 à la cigale est annulé pour cause de scission", 
+        "picture": { "id": "t200-d1-i1", "url": "/fakedata/tranxen200/cancelled.jpeg" },
         "comments": [
           {
             "id": "t200-d1-c1",
@@ -94,8 +96,14 @@
             "content": "Ah merde, c'est annulé !! Les gars, vous vous prenez pour Téléphone ?"
           }
         ] 
-      },
-        { "id":"t200-d0", "date": "1992-10-05", "eventDate":"1992-10-15", "title": "Tranxen en direct du Top 50", "detail": "Tranxen 200 sera en direct sur le plateau du Top 50 pour présenter leur dernier tube : Vice & Versa." }
+        },
+        { "id":"t200-d0", 
+        "date": "1992-10-05", 
+        "eventDate":"1992-10-15", 
+        "title": "Tranxen en direct du Top 50", 
+        "detail": "Tranxen 200 sera en direct sur le plateau du Top 50 pour présenter leur dernier tube : Vice & Versa.",
+        "picture": { "id": "t200-d0-i1", "url": "/fakedata/tranxen200/top50.png"  }
+        }
       ]
     }
   ]
