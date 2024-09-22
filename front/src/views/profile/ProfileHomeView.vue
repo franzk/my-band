@@ -9,8 +9,10 @@
   </section>
 
   <section id="posts">
-    <PostFeed />
+    <PostFeed :posts="profileStore.profile?.posts" />
   </section>
+
+  <RouterLink :to="{ name: 'profile-posts' }" class="all-posts-link">View all posts</RouterLink>
 </template>
 
 <script setup lang="ts">
@@ -40,5 +42,9 @@ const profileStore = useProfileStore()
   p {
     margin: 0 0 $spacing-medium $spacing-medium;
   }
+}
+
+.all-posts-link {
+  margin: $spacing-medium;
 }
 </style>

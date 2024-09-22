@@ -1,15 +1,15 @@
 <template>
-  <PicturesGallery :pictures="picturesStore.pictures || []" />
+  <PicturesGallery :pictures="pictureStore.pictures || []" />
 </template>
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { usePicturesStore } from '@/stores/picturesStore'
+import { usePictureStore } from '@/stores/pictureStore'
 import PicturesGallery from '@/components/PicturesGallery.vue'
 import { RouteUtils } from '@/utils/RouteUtils'
 
 const route = useRoute()
-const picturesStore = usePicturesStore()
+const pictureStore = usePictureStore()
 
-picturesStore.fetchPictures(RouteUtils.firstIfArray(route.params.id))
+pictureStore.getPictures(RouteUtils.firstIfArray(route.params.id))
 </script>

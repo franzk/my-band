@@ -9,14 +9,14 @@ import { ref } from 'vue'
  * WARNING : this store is not complete, the fetchVideos method returns mock data
  * you have to implement the fetchVideos method to fetch the pictures from the API
  */
-export const useVideosStore = defineStore('videosStore', () => {
+export const useVideoStore = defineStore('videoStore', () => {
   const videos = ref<Video[] | null>(null)
 
-  const fetchVideos = async (profileId: string) => {
+  const getVideos = async (profileId: string) => {
     const response = await axios.get(`http://localhost:3000/profiles/${profileId}`)
     const profile = response.data as Profile
     videos.value = (profile.posts.filter((p) => p.video).map((p) => p.video) || []) as Video[]
   }
 
-  return { videos, fetchVideos }
+  return { videos, getVideos }
 })

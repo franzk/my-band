@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="(video, index) in videosStore.videos" :key="index">
+    <li v-for="(video, index) in videoStore.videos" :key="index">
       <VideoPlayer :youtubeId="video.youtubeId" />
     </li>
   </ul>
@@ -8,14 +8,14 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { useVideosStore } from '@/stores/videosStore'
+import { useVideoStore } from '@/stores/videoStore'
 import { RouteUtils } from '@/utils/RouteUtils'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 
 const route = useRoute()
-const videosStore = useVideosStore()
+const videoStore = useVideoStore()
 
-videosStore.fetchVideos(RouteUtils.firstIfArray(route.params.id))
+videoStore.getVideos(RouteUtils.firstIfArray(route.params.id))
 </script>
 
 <style lang="scss" scoped>

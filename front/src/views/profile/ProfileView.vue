@@ -1,9 +1,9 @@
 <template>
   <section class="profile">
-    <div class="profile-header">
-      <ProfileHeader v-if="route.name === 'profile-home'" />
-      <ProfileHeaderSmall v-else />
-    </div>
+    <!--div class="profile-header" -->
+    <ProfileHeader v-if="route.name === 'profile-home'" />
+    <ProfileHeaderSmall v-else />
+    <!-- /div -->
     <div class="profile-nav">
       <ProfileNavBar />
     </div>
