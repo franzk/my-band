@@ -15,6 +15,6 @@ const route = useRoute()
 <style lang="scss" scoped>
 .profile-events-view {
   text-align: center;
-  margin: $spacing-large;
+  margin: $spacing-small;
 }
 </style>
