@@ -3,7 +3,7 @@ package net.franz.myband.profile.controller;
 import net.bytebuddy.utility.RandomString;
 import net.franz.myband.profile.domain.Post;
 import net.franz.myband.profile.exception.PostNotFoundException;
-import net.franz.myband.profile.service.impl.PostService;
+import net.franz.myband.profile.service.PostService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

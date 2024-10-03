@@ -3,7 +3,7 @@ package net.franz.myband.profile.controller;
 import lombok.AllArgsConstructor;
 import net.franz.myband.profile.domain.Post;
 import net.franz.myband.profile.exception.PostNotFoundException;
-import net.franz.myband.profile.service.impl.PostService;
+import net.franz.myband.profile.service.PostService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

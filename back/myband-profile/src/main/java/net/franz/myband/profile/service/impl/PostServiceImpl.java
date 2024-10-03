@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import net.franz.myband.profile.domain.Post;
 import net.franz.myband.profile.exception.PostNotFoundException;
 import net.franz.myband.profile.repository.PostRepository;
+import net.franz.myband.profile.service.PostService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

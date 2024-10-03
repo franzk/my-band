@@ -19,4 +19,8 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Post not found");
     }
 
+    @ExceptionHandler(EventNotFoundException.class)
+    ResponseEntity<String> handleEventNotFoundException(EventNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Event not found");
+    }
 }

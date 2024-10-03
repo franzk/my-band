@@ -41,4 +41,17 @@ public class ControllerAdvisorTest {
         assertThat(result.getBody()).isEqualTo("Post not found");
     }
 
+    @Test
+    void handleEventNotFoundExceptionTest() {
+        // Arrange
+        EventNotFoundException ex = new EventNotFoundException();
+
+        // Act
+        ResponseEntity<String> result = controllerAdvisor.handleEventNotFoundException(ex);
+
+        // Assert
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(result.getBody()).isEqualTo("Event not found");
+    }
+
 }

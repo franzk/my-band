@@ -1,4 +1,4 @@
-package net.franz.myband.profile.service.impl;
+package net.franz.myband.profile.service;
 
 import net.franz.myband.profile.domain.Post;
 import net.franz.myband.profile.exception.PostNotFoundException;
