@@ -1,6 +1,7 @@
 package net.franz.myband.profile.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.franz.myband.profile.domain.media.Image;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @Document(collection = "events")
 public class Event extends CollectionItem {
 

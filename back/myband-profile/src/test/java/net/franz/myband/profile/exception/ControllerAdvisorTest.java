@@ -26,7 +26,19 @@ public class ControllerAdvisorTest {
         // Assert
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
         assertThat(result.getBody()).isEqualTo("Profile not found");
+    }
 
+    @Test
+    void handlePostNotFoundExceptionTest() {
+        // Arrange
+        PostNotFoundException ex = new PostNotFoundException();
+
+        // Act
+        ResponseEntity<String> result = controllerAdvisor.handlePostNotFoundException(ex);
+
+        // Assert
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(result.getBody()).isEqualTo("Post not found");
     }
 
 }

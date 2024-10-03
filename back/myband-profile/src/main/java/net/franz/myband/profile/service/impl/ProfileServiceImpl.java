@@ -21,8 +21,12 @@ public class ProfileServiceImpl implements ProfileService {
         return profileRepository.findByUsername(username).orElseThrow(ProfileNotFoundException::new);
     }
 
-    public Profile updateProfile(Profile profile) {
-        return profileRepository.save(profile);
+    public Profile updateProfile(Profile profile) throws ProfileNotFoundException {
+        if (profileRepository.existsById(profile.getId())) {
+            return profileRepository.save(profile);
+        } else {
+            throw new ProfileNotFoundException();
+        }
     }
 
     public void deleteProfile(String profileId) {

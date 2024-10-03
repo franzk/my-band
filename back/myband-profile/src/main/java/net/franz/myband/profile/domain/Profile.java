@@ -1,6 +1,7 @@
 package net.franz.myband.profile.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import net.franz.myband.profile.domain.media.Video;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -8,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @Document(collection = "profiles")
 public class Profile extends CollectionItem {
 

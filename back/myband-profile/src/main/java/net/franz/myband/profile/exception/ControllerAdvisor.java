@@ -14,5 +14,9 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profile not found");
     }
 
+    @ExceptionHandler(PostNotFoundException.class)
+    ResponseEntity<String> handlePostNotFoundException(PostNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Post not found");
+    }
 
 }

@@ -60,15 +60,27 @@ public class ProfileServiceImplTest {
     }
 
     @Test
-    void updateProfileTest() {
+    void updateProfileTest() throws ProfileNotFoundException {
         // Act
         Profile profile = new Profile();
+        when(profileRepository.existsById(profile.getId())).thenReturn(true);
 
         // Arrange
         serviceUnderTest.updateProfile(profile);
 
         // Assert
         verify(profileRepository).save(profile);
+    }
+
+    @Test
+    void updateProfileWithExceptionTest() {
+        // Act
+        Profile profile = new Profile();
+        when(profileRepository.existsById(profile.getId())).thenReturn(false);
+
+        // Arrange + Assert
+        assertThrows(ProfileNotFoundException.class, () -> serviceUnderTest.updateProfile(profile));
+
     }
 
     @Test
