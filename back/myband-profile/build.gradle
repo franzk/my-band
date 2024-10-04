@@ -5,7 +5,7 @@ plugins {
 	id 'jacoco'
 }
 
-group = 'net.franz.myband'
+group = 'net.franzka.myband'
 version = '0.0.1-SNAPSHOT'
 
 java {
