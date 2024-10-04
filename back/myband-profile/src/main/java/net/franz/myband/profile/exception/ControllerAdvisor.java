@@ -1,5 +1,6 @@
 package net.franz.myband.profile.exception;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -22,5 +23,10 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     @ExceptionHandler(EventNotFoundException.class)
     ResponseEntity<String> handleEventNotFoundException(EventNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Event not found");
+    }
+
+    @ExceptionHandler(DuplicateKeyException.class)
+    ResponseEntity<String> handleDuplicateKeyException(DuplicateKeyException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Duplicate key");
     }
 }

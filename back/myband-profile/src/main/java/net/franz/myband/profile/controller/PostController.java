@@ -21,7 +21,7 @@ public class PostController {
         return ResponseEntity.ok(postService.createPost(post));
     }
 
-    @GetMapping
+    @GetMapping("/profile")
     public ResponseEntity<List<Post>> getPostsByProfileId(@RequestParam String profileId) {
         return ResponseEntity.ok(postService.getPostsByProfileId(profileId));
     }

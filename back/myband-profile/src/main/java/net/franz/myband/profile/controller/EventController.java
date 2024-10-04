@@ -26,7 +26,7 @@ public class EventController {
         return ResponseEntity.ok(eventService.getEventById(id));
     }
 
-    @GetMapping
+    @GetMapping("/profile")
     public ResponseEntity<List<Event>> getEventsByProfileId(@RequestParam String profileId) {
         return ResponseEntity.ok(eventService.getEventsByProfileId(profileId));
     }

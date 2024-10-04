@@ -5,6 +5,7 @@ import net.franz.myband.profile.domain.Profile;
 import net.franz.myband.profile.exception.ProfileNotFoundException;
 import net.franz.myband.profile.repository.ProfileRepository;
 import net.franz.myband.profile.service.impl.ProfileServiceImpl;
+import net.franz.myband.profile.utils.TestProfile;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,11 +28,9 @@ public class ProfileServiceImplTest {
     @Test
     void createProfileTest() {
         // Act
-        Profile profile = new Profile();
-
+        Profile profile = TestProfile.create();
         // Arrange
         serviceUnderTest.createProfile(profile);
-
         // Assert
         verify(profileRepository).save(profile);
     }
@@ -40,11 +39,9 @@ public class ProfileServiceImplTest {
     void getProfileByUsernameTest() throws ProfileNotFoundException {
         // Act
         String username = RandomString.make(64);
-        when(profileRepository.findByUsername(username)).thenReturn(java.util.Optional.of(new Profile()));
-
+        when(profileRepository.findByUsername(username)).thenReturn(java.util.Optional.of(TestProfile.create()));
         // Arrange
         serviceUnderTest.getProfileByUsername(username);
-
         // Assert
         verify(profileRepository).findByUsername(username);
     }
@@ -53,21 +50,17 @@ public class ProfileServiceImplTest {
     void getProfileByUsernameWithExceptionTest() {
         // Act
         String username = RandomString.make(64);
-
         // Arrange + Assert
         assertThrows(ProfileNotFoundException.class, () ->  serviceUnderTest.getProfileByUsername(username));
-
     }
 
     @Test
     void updateProfileTest() throws ProfileNotFoundException {
         // Act
-        Profile profile = new Profile();
+        Profile profile = TestProfile.create();
         when(profileRepository.existsById(profile.getId())).thenReturn(true);
-
         // Arrange
         serviceUnderTest.updateProfile(profile);
-
         // Assert
         verify(profileRepository).save(profile);
     }
@@ -75,26 +68,20 @@ public class ProfileServiceImplTest {
     @Test
     void updateProfileWithExceptionTest() {
         // Act
-        Profile profile = new Profile();
+        Profile profile = TestProfile.create();
         when(profileRepository.existsById(profile.getId())).thenReturn(false);
-
         // Arrange + Assert
         assertThrows(ProfileNotFoundException.class, () -> serviceUnderTest.updateProfile(profile));
-
     }
 
     @Test
     void deleteProfileTest() {
         // Act
         String profileId = RandomString.make(64);
-
         // Arrange
         serviceUnderTest.deleteProfile(profileId);
-
         // Assert
         verify(profileRepository).deleteById(profileId);
     }
-
-
 
 }

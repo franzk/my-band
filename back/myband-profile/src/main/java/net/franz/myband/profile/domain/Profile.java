@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import net.franz.myband.profile.domain.media.Video;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Profile extends CollectionItem {
 
     @Id
     private String id;
+
+    @Indexed(unique = true)
     private String username;
 
     private String title;
