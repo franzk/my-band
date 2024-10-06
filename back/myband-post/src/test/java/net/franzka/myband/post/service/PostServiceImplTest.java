@@ -1,16 +1,19 @@
 package net.franzka.myband.post.service;
 
 import net.bytebuddy.utility.RandomString;
+import net.franzka.myband.post.domain.Comment;
 import net.franzka.myband.post.domain.Post;
 import net.franzka.myband.post.exception.PostNotFoundException;
 import net.franzka.myband.post.repository.PostRepository;
 import net.franzka.myband.post.service.impl.PostServiceImpl;
+import net.franzka.myband.post.utils.TestPost;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -26,10 +29,10 @@ public class PostServiceImplTest {
 
     @Test
     void createPostTest() {
-        // Act
+        // Arrange
         Post post = new Post();
 
-        // Arrange
+        // Act
         serviceUnderTest.createPost(post);
 
         // Assert
@@ -38,11 +41,11 @@ public class PostServiceImplTest {
 
     @Test
     void getPostByIdTest() throws PostNotFoundException {
-        // Act
-        String id = RandomString.make(64);
-        when(postRepository.findById(id)).thenReturn(java.util.Optional.of(new Post()));
-
         // Arrange
+        String id = RandomString.make(64);
+        when(postRepository.findById(id)).thenReturn(java.util.Optional.of(TestPost.create()));
+
+        // Act
         serviceUnderTest.getPostById(id);
 
         // Assert
@@ -51,19 +54,19 @@ public class PostServiceImplTest {
 
     @Test
     void getPostByIdWithExceptionTest() {
-        // Act
+        // Arrange
         String id = RandomString.make(64);
 
-        // Arrange + Assert
+        // Act + Assert
         assertThrows(PostNotFoundException.class, () ->  serviceUnderTest.getPostById(id));
     }
 
     @Test
     void getPostsByProfileIdTest() {
-        // Act
+        // Arrange
         String profileId = RandomString.make(64);
 
-        // Arrange
+        // Act
         serviceUnderTest.getPostsByProfileId(profileId);
 
         // Assert
@@ -72,11 +75,11 @@ public class PostServiceImplTest {
 
     @Test
     void updatePostTest() throws PostNotFoundException {
-        // Act
-        Post post = new Post();
+        // Arrange
+        Post post = TestPost.create();
         when(postRepository.existsById(post.getId())).thenReturn(true);
 
-        // Arrange
+        // Act
         serviceUnderTest.updatePost(post);
 
         // Assert
@@ -85,20 +88,52 @@ public class PostServiceImplTest {
 
     @Test
     void updatePostWithExceptionTest() {
-        // Act
-        Post post = new Post();
+        // Arrange
+        Post post = TestPost.create();
         when(postRepository.existsById(post.getId())).thenReturn(false);
 
-        // Arrange + Assert
+        // Act + Assert
         assertThrows(PostNotFoundException.class, () -> serviceUnderTest.updatePost(post));
     }
 
     @Test
-    void deletePostTest() {
+    void incrementCommentCountTest() throws PostNotFoundException {
+        // Arrange
+        String postId = RandomString.make(64);
+        Post post = TestPost.create();
+        int commentsCount = post.getCommentsCount();
+        when(postRepository.findById(postId)).thenReturn(java.util.Optional.of(post));
+
         // Act
+        serviceUnderTest.incrementCommentCount(postId);
+
+        // Assert
+        verify(postRepository).save(post);
+        assertThat(post.getCommentsCount()).isEqualTo(commentsCount + 1);
+    }
+
+    @Test
+    void decrementCommentCountTest() throws PostNotFoundException {
+        // Arrange
+        String postId = RandomString.make(64);
+        Post post = TestPost.create();
+        int commentsCount = post.getCommentsCount();
+        when(postRepository.findById(postId)).thenReturn(java.util.Optional.of(post));
+
+        // Act
+        serviceUnderTest.decrementCommentCount(postId);
+
+        // Assert
+        verify(postRepository).save(post);
+        assertThat(post.getCommentsCount()).isEqualTo(commentsCount - 1);
+    }
+
+    @Test
+    void deletePostTest() {
+        // Arrange
         String postId = RandomString.make(64);
 
-        // Arrange
+        // Act
         serviceUnderTest.deletePost(postId);
 
         // Assert
