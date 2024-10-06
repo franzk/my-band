@@ -1,4 +1,4 @@
-package net.franzka.myband.profile.domain;
+package net.franzka.myband.post.domain;
 
 import lombok.Data;
 

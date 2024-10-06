@@ -2,7 +2,6 @@ package net.franzka.myband.profile.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import net.franzka.myband.profile.domain.media.Video;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -27,7 +26,8 @@ public class Profile extends CollectionItem {
     private String avatarUrl;
     private String coverImageUrl;
 
-    private Video video;
+    // presentation video
+    private String youtubeId;
 
     private List<String> tags;
 

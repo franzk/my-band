@@ -2,7 +2,6 @@ package net.franzka.myband.profile.utils;
 
 import net.bytebuddy.utility.RandomString;
 import net.franzka.myband.profile.domain.Profile;
-import net.franzka.myband.profile.domain.media.Video;
 
 import java.util.List;
 
@@ -17,9 +16,7 @@ public class TestProfile {
         profile.setAvatarUrl(RandomString.make(64));
         profile.setCoverImageUrl(RandomString.make(64));
         profile.setTags(List.of(RandomString.make(64), RandomString.make(64)));
-        Video video = new Video();
-        video.setYoutubeId(RandomString.make(64));
-        profile.setVideo(video);
+        profile.setYoutubeId(RandomString.make(64));
         return profile;
     }
 }
