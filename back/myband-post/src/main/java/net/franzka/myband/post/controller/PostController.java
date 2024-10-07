@@ -37,8 +37,8 @@ public class PostController {
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deletePost(@RequestParam String postId) throws PostNotFoundException {
-        postService.deletePost(postId);
+    public ResponseEntity<String> deletePost(@RequestParam String id) throws PostNotFoundException {
+        postService.deletePost(id);
         return ResponseEntity.ok("Post deleted");
     }
 
