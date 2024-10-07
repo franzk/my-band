@@ -18,7 +18,16 @@ public class PostServiceImpl implements PostService {
 
     public Post createPost(Post post) {
         post.setCreated(LocalDateTime.now());
-        return postRepository.save(post);
+        Post newPost = postRepository.save(post);
+        if (newPost.getImage() != null) {
+            newPost.getImage().setRelatedPostId(newPost.getId());
+            newPost = postRepository.save(newPost);
+        }
+        if (newPost.getVideo() != null) {
+            newPost.getVideo().setRelatedPostId(newPost.getId());
+            newPost = postRepository.save(newPost);
+        }
+        return newPost;
     }
 
     public Post getPostById(String id) throws PostNotFoundException {
@@ -32,6 +41,12 @@ public class PostServiceImpl implements PostService {
     public Post updatePost(Post post) throws PostNotFoundException {
         if (postRepository.existsById(post.getId())) {
             post.setUpdated(LocalDateTime.now());
+            if (post.getImage() != null) {
+                post.getImage().setRelatedPostId(post.getId());
+            }
+            if (post.getVideo() != null) {
+                post.getVideo().setRelatedPostId(post.getId());
+            }
             return postRepository.save(post);
         } else {
             throw new PostNotFoundException();

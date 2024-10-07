@@ -1,6 +1,5 @@
 package net.franzka.myband.post.integration;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.bytebuddy.utility.RandomString;
 import net.franzka.myband.post.domain.Post;
@@ -24,8 +23,6 @@ import java.util.Random;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.fail;
-
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -69,8 +66,9 @@ public class PostTestIT {
             fail("Post not found");
         } else {
             assertThat(result.get().getContent()).isEqualTo(post.getContent());
-            assertThat(result.get().getImage()).isEqualTo(post.getImage());
+            assertThat(result.get().getImage().getUrl()).isEqualTo(post.getImage().getUrl());
             assertThat(result.get().getCreated()).isAfter(timeBefore);
+            assertThat(result.get().getVideo().getRelatedPostId()).isEqualTo(result.get().getId());
         }
     }
 
@@ -85,7 +83,7 @@ public class PostTestIT {
         // Assert
         Post resultPost = objectMapper.readValue(result.andReturn().getResponse().getContentAsString(), Post.class);
         assertThat(resultPost.getContent()).isEqualTo(post.getContent());
-        assertThat(resultPost.getImage()).isEqualTo(post.getImage());
+        assertThat(resultPost.getImage().getUrl()).isEqualTo(post.getImage().getUrl());
     }
 
     @Test
@@ -118,10 +116,10 @@ public class PostTestIT {
         Post[] resultPosts = objectMapper.readValue(result.andReturn().getResponse().getContentAsString(), Post[].class);
         assertThat(resultPosts.length).isEqualTo(nbPosts);
         assertThat(resultPosts[0].getContent()).isEqualTo(testPosts.get(0).getContent());
-        assertThat(resultPosts[0].getImage()).isEqualTo(testPosts.get(0).getImage());
+        assertThat(resultPosts[0].getImage().getUrl()).isEqualTo(testPosts.get(0).getImage().getUrl());
         int randomPostIndex = new Random().nextInt(nbPosts);
         assertThat(resultPosts[randomPostIndex].getContent()).isEqualTo(testPosts.get(randomPostIndex).getContent());
-        assertThat(resultPosts[randomPostIndex].getImage()).isEqualTo(testPosts.get(randomPostIndex).getImage());
+        assertThat(resultPosts[randomPostIndex].getImage().getUrl()).isEqualTo(testPosts.get(randomPostIndex).getImage().getUrl());
     }
 
     @Test
@@ -142,6 +140,8 @@ public class PostTestIT {
             fail("Post not found");
         } else {
             assertThat(result.get().getContent()).isEqualTo(post.getContent());
+            assertThat(result.get().getImage().getUrl()).isEqualTo(post.getImage().getUrl());
+            assertThat(result.get().getVideo().getRelatedPostId()).isEqualTo(result.get().getId());
             assertThat(result.get().getUpdated()).isAfter(timeBefore);
         }
     }
