@@ -1,0 +1,60 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - app-network
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=secret
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=secret
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  profile:
+    build: back/myband-profile
+    environment:
+      - spring.data.mongodb.database=myband
+      - spring.data.mongodb.host=mongodb
+    ports:
+      - 8201:8201
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  post:
+    build: back/myband-post
+    environment:
+      - spring.data.mongodb.database=myband
+      - spring.data.mongodb.host=mongodb
+    ports:
+      - 8202:8202
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+volumes:
+  mongodb-data:
+
+networks:
+  app-network:
+    driver: bridge
