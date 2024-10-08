@@ -15,8 +15,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PostServiceImplTest {
@@ -30,13 +30,14 @@ public class PostServiceImplTest {
     @Test
     void createPostTest() {
         // Arrange
-        Post post = new Post();
+        Post post = TestPost.create();
+        when(postRepository.save(any())).thenReturn(post);
 
         // Act
         serviceUnderTest.createPost(post);
 
         // Assert
-        verify(postRepository).save(post);
+        verify(postRepository, times(3)).save(post);
     }
 
     @Test

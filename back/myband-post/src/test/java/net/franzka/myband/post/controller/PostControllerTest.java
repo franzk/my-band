@@ -4,6 +4,7 @@ import net.bytebuddy.utility.RandomString;
 import net.franzka.myband.post.domain.Post;
 import net.franzka.myband.post.exception.PostNotFoundException;
 import net.franzka.myband.post.service.PostService;
+import net.franzka.myband.post.utils.TestPost;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -30,7 +31,7 @@ public class PostControllerTest {
     @Test
     void createPostTest() {
         // Arrange
-        Post testPost = new Post();
+        Post testPost = TestPost.create();
         when(postService.createPost(testPost)).thenReturn(testPost);
 
         // Act
@@ -72,7 +73,7 @@ public class PostControllerTest {
     @Test
     void updatePostTest() throws PostNotFoundException {
         // Arrange
-        Post testPost = new Post();
+        Post testPost = TestPost.create();
         when(postService.updatePost(testPost)).thenReturn(testPost);
 
         // Act

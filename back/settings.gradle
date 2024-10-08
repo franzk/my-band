@@ -1,2 +1,3 @@
 rootProject.name = 'myband'
 include 'myband-profile'
+include 'myband-post'

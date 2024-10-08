@@ -9,6 +9,8 @@ services:
       - "27017:27017"
     volumes:
       - mongodb-data:/data/db
+    networks:
+      - app-network
 
   mongo-express:
     image: mongo-express:latest
@@ -23,6 +25,36 @@ services:
       - "8081:8081"
     depends_on:
       - mongodb
+    networks:
+      - app-network
+
+  profile:
+    build: back/myband-profile
+    environment:
+      - spring.data.mongodb.database=myband
+      - spring.data.mongodb.host=mongodb
+    ports:
+      - 8201:8201
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  post:
+    build: back/myband-post
+    environment:
+      - spring.data.mongodb.database=myband
+      - spring.data.mongodb.host=mongodb
+    ports:
+      - 8202:8202
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
 
 volumes:
   mongodb-data:
+
+networks:
+  app-network:
+    driver: bridge
