@@ -11,14 +11,18 @@ public class TestPost {
     public static Post create() {
         Post post = new Post();
         post.setId(RandomString.make(64));
+        post.setProfileId(RandomString.make(64));
+        post.setTitle(RandomString.make(64));
         post.setContent(RandomString.make(64));
-        post.setCommentsCount(new Random().nextInt(100));
+
         Image image = new Image();
         image.setUrl(RandomString.make(64));
         post.setImage(image);
+
         Video video = new Video();
         video.setYoutubeId(RandomString.make(64));
         post.setVideo(video);
+
         return post;
     }
 }

@@ -17,6 +17,8 @@ public class Post extends CollectionItem {
 
     private String profileId;
 
+    private String title;
+
     private String content;
 
     private Image image;

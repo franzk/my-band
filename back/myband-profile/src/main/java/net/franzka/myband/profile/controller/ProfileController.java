@@ -7,12 +7,19 @@ import net.franzka.myband.profile.service.ProfileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/profile")
 public class ProfileController {
 
     private final ProfileService profileService;
+
+    @GetMapping
+    public ResponseEntity<List<Profile>> findAll() {
+        return ResponseEntity.ok(profileService.findAll());
+    }
 
     @GetMapping("/{username}")
     public ResponseEntity<Profile> getProfile(@PathVariable String username) throws ProfileNotFoundException {

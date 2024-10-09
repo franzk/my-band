@@ -13,6 +13,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Random;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -102,7 +104,9 @@ public class PostServiceImplTest {
         // Arrange
         String postId = RandomString.make(64);
         Post post = TestPost.create();
-        int commentsCount = post.getCommentsCount();
+        int commentsCount = new Random().nextInt(100) + 1;
+        post.setCommentsCount(commentsCount);
+
         when(postRepository.findById(postId)).thenReturn(java.util.Optional.of(post));
 
         // Act
@@ -118,6 +122,7 @@ public class PostServiceImplTest {
         // Arrange
         String postId = RandomString.make(64);
         Post post = TestPost.create();
+        post.setCommentsCount(new Random().nextInt(100) + 1);
         int commentsCount = post.getCommentsCount();
         when(postRepository.findById(postId)).thenReturn(java.util.Optional.of(post));
 
