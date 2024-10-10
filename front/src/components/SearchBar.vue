@@ -34,11 +34,11 @@ input {
   font-weight: normal;
 
   color: $primary;
-  background-color: $black;
-  border: $border-size-tiny solid $shadow;
+  background-color: $secondary;
+  border: $border-size-tiny solid $secondary;
   border-radius: $border-radius-xs;
   transition: border-color 0.15s ease-in-out;
-  box-shadow: 1px 1px 2px $shadow;
+  // box-shadow: 1px 1px 2px $accent;
 }
 
 .search-icon {
