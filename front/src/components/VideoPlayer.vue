@@ -17,6 +17,10 @@ const props = defineProps({
   youtubeId: {
     type: String,
     default: ''
+  },
+  rounded: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
@@ -25,5 +29,8 @@ const props = defineProps({
 .video-placeholder {
   width: 100%;
   height: calc(100vw * 9 / 16);
+}
+div:first-child {
+  border-radius: $border-radius-small;
 }
 </style>

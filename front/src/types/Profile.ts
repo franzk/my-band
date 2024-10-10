@@ -1,20 +1,16 @@
-import type { Picture } from '@/types/Picture'
-import type { Post } from '@/types/Post'
-import type { Video } from '@/types/Video'
-import type { Event } from '@/types/Event'
-
 /**
  * Profile type
  */
 export interface Profile {
   id: string
-  name: string
+  username: string
+  title: string
   slogan: string
   bio: string
-  avatarUrl: string
-  coverPictureUrl: string
-  video: Video
-  posts: Post[]
-  pictures: Picture[]
-  events: Event[]
+  avatarUrl?: string
+  coverImageUrl?: string
+  youtubeId?: string
+  tags: string[]
+  created: Date
+  updated?: Date
 }
