@@ -20,7 +20,7 @@ const buttonClass = computed(() => (props.variant === 'primary' ? 'primary' : 'a
 <style scoped lang="scss">
 button {
   border-radius: 25px;
-  font-size: 1rem;
+  font-size: $font-size-medium;
   font-weight: bolder;
   border: none;
   padding: 0.8rem 1rem;

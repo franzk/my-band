@@ -5,6 +5,10 @@
     :bio="profileStore.profile?.bio"
   />
 
+  <section id="tags">
+    <TagsList :tags="profileStore.profile?.tags || []" />
+  </section>
+
   <section id="video">
     <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" class="aa" />
   </section>
@@ -24,6 +28,7 @@ import { RouteUtils } from '@/utils/RouteUtils'
 import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 import RoundedButton from '@/components/RoundedButton.vue'
+import TagsList from '@/components/TagsList.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -56,6 +61,7 @@ function showErrorPage(error: string) {
   margin: $spacing-small;
   box-shadow: 1px 1px 5px 0 $accent;
 }
+
 #cta {
   display: flex;
   flex-direction: row;

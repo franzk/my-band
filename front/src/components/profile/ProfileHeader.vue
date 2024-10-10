@@ -35,7 +35,7 @@ const props = defineProps({
 <style scoped lang="scss">
 .profile-header {
   position: relative;
-  height: 10rem;
+  height: 9rem;
 }
 
 .image-container {
