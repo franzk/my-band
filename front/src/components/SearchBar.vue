@@ -3,7 +3,7 @@
     <span class="absolute-icon search-icon">
       <IconSearch />
     </span>
-    <input type="input" v-model="searchVal" placeholder="Rechercher..." />
+    <input type="input" v-model="searchVal" placeholder="search ..." />
     <span v-if="searchVal" class="absolute-icon clear-icon" @click="searchVal = ''">
       <IconCancel />
     </span>

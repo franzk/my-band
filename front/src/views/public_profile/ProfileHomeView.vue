@@ -15,7 +15,7 @@
   </section>
 
   <section id="video">
-    <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" class="aa" />
+    <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" />
   </section>
 </template>
 
