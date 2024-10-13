@@ -18,8 +18,15 @@
     <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" />
   </section>
 
+  <h2 id="posts-title">RECENT POSTS</h2>
+  <hr class="separator" />
   <section id="latest-posts">
-    {{ postStore.posts }}
+    <PostTile
+      v-for="post in postStore.posts"
+      :key="post.id"
+      :title="post.title"
+      :imageUrl="post.image?.url"
+    />
   </section>
 </template>
 
@@ -34,6 +41,7 @@ import VideoPlayer from '@/components/VideoPlayer.vue'
 import RoundedButton from '@/components/RoundedButton.vue'
 import TagsList from '@/components/TagsList.vue'
 import { usePostStore } from '@/stores/postStore'
+import PostTile from '@/components/PostTile.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -103,5 +111,24 @@ function showErrorPage(error: string) {
     margin: $spacing-small;
     width: 40%;
   }
+}
+
+#posts-title {
+  margin: $spacing-medium $spacing-small $spacing-small $spacing-small;
+}
+
+.separator {
+  width: 80%;
+  margin: 0 0 0 $spacing-small;
+  border: 1px solid $accent;
+}
+
+#latest-posts {
+  margin: $spacing-medium $spacing-small 0 $spacing-small;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+  gap: 20px; /* espace entre les colonnes */
+  width: 100%;
 }
 </style>

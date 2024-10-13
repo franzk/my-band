@@ -7,10 +7,10 @@ import type { Video } from '@/types/Video'
 export interface Post {
   id: string
   date: Date
+  title: string
   content: string
-  picture?: Picture
+  image?: Picture
   video?: Video
-  comments?: Comment[]
   created: Date
   updated: Date
 }
