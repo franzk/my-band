@@ -4,11 +4,11 @@
       <img :src="cover" alt="Image" />
       <div class="overlay"></div>
     </div>
-    <div class="text-container">
-      <h1>{{ title }}</h1>
-      <p>{{ bio }}</p>
-    </div>
   </div>
+  <div class="title">
+    <h1>{{ title }}</h1>
+  </div>
+  <p class="bio">{{ bio }}</p>
 </template>
 
 <script setup lang="ts">
@@ -35,12 +35,10 @@ const props = defineProps({
 <style scoped lang="scss">
 .profile-header {
   position: relative;
-  height: 9rem;
 }
 
 .image-container {
   position: relative;
-  height: 7rem;
   overflow: hidden;
 }
 
@@ -56,26 +54,23 @@ const props = defineProps({
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba($secondary, 1) 0%, rgba(0, 0, 0, 0) 300%),
-    linear-gradient(to top, rgba($secondary, 1) 0%, rgba(0, 0, 0, 0) 10%);
+  background: linear-gradient(to top, rgba($secondary, 1) 5%, rgba(0, 0, 0, 0) 25%);
 }
 
-.text-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: $spacing-small;
+.title {
+  margin-top: -2rem;
+  position: relative;
+
+  padding: 0 0 0 $spacing-small;
 
   h1 {
     color: $primary;
     margin: 0;
   }
+}
 
-  p {
-    color: $primary;
-    margin: $spacing-small 0 0 0;
-  }
+.bio {
+  padding: $spacing-small;
+  margin: 0;
 }
 </style>

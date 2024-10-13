@@ -1,8 +1,6 @@
 <template>
   <ul id="tags">
-    <li v-for="tag in tags" :key="tag" class="tag">
-      {{ tag.toUpperCase() }}
-    </li>
+    <li v-for="tag in tags" :key="tag" class="tag">#{{ tag.toUpperCase() }}</li>
   </ul>
 </template>
 
@@ -19,15 +17,16 @@ const props = defineProps({
 #tags {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
   padding: 0;
   font-size: $font-size-small;
   .tag {
     margin: $spacing-tiny;
-    padding: $spacing-small;
+    padding: $spacing-small $spacing-medium;
     min-width: 4rem;
     border-radius: 25px;
-    background-color: $accent;
+    border: 2px solid $accent;
     color: $primary;
     text-align: center;
     font-weight: bold;

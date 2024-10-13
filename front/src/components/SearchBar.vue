@@ -36,7 +36,7 @@ input {
   color: $primary;
   background-color: $secondary;
   border: $border-size-tiny solid $secondary;
-  border-radius: $border-radius-xs;
+  border-radius: $border-radius-large;
   transition: border-color 0.15s ease-in-out;
   // box-shadow: 1px 1px 2px $accent;
 }

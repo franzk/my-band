@@ -35,6 +35,7 @@ import IconUser from '@/components/icons/IconUser.vue'
     img {
       width: $search-bar-height;
       height: $search-bar-height;
+      border-radius: 100%;
     }
   }
 

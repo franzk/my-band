@@ -9,13 +9,13 @@
     <TagsList :tags="profileStore.profile?.tags || []" />
   </section>
 
-  <section id="video">
-    <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" class="aa" />
-  </section>
-
   <section id="cta">
     <RoundedButton class="cta-btn" variant="primary">FOLLOW</RoundedButton>
     <RoundedButton class="cta-btn" variant="secondary">MESSAGE</RoundedButton>
+  </section>
+
+  <section id="video">
+    <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" class="aa" />
   </section>
 </template>
 
@@ -62,12 +62,17 @@ function showErrorPage(error: string) {
   box-shadow: 1px 1px 5px 0 $accent;
 }
 
+#tags {
+  margin: $spacing-small;
+}
+
 #cta {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   .cta-btn {
     margin: $spacing-small;
-    width: 50%;
+    width: 40%;
   }
 }
 </style>
