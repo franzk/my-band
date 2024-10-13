@@ -11,4 +11,6 @@ export interface Post {
   picture?: Picture
   video?: Video
   comments?: Comment[]
+  created: Date
+  updated: Date
 }

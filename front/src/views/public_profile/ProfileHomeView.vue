@@ -17,6 +17,10 @@
   <section id="video">
     <VideoPlayer :youtubeId="profileStore.profile?.youtubeId" />
   </section>
+
+  <section id="latest-posts">
+    {{ postStore.posts }}
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -29,16 +33,20 @@ import ProfileHeader from '@/components/profile/ProfileHeader.vue'
 import VideoPlayer from '@/components/VideoPlayer.vue'
 import RoundedButton from '@/components/RoundedButton.vue'
 import TagsList from '@/components/TagsList.vue'
+import { usePostStore } from '@/stores/postStore'
 
 const route = useRoute()
 const router = useRouter()
-const profileStore = useProfileStore()
 
-// fetch profile
+// Profile Data Zone
+
+// Fetch profile
+const profileStore = useProfileStore()
 profileStore.fetchProfile(RouteUtils.firstIfArray(route.params.id))
 
 // error handling
 if (profileStore.error) {
+  // TODO tester de l'enlever
   showErrorPage(profileStore.error)
 }
 
@@ -51,6 +59,27 @@ watch(
   }
 )
 
+// Posts Data Zone
+const postStore = usePostStore()
+watch(
+  () => profileStore.profile?.id,
+  (profileId) => {
+    if (profileId) {
+      postStore.getPosts(profileId)
+    }
+  }
+)
+
+watch(
+  () => postStore.error,
+  (error) => {
+    if (error) {
+      showErrorPage(error)
+    }
+  }
+)
+
+// functions
 function showErrorPage(error: string) {
   router.push({ name: ErrorUtils.errorRouteName(error) })
 }
