@@ -18,7 +18,9 @@ public class PostServiceImpl implements PostService {
 
     public Post createPost(Post post) {
         post.setCreated(LocalDateTime.now());
+        post.setCommentsCount(0);
         Post newPost = postRepository.save(post);
+
         if (newPost.getImage() != null) {
             newPost.getImage().setRelatedPostId(newPost.getId());
             newPost = postRepository.save(newPost);
