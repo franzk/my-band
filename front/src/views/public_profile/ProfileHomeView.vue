@@ -128,7 +128,7 @@ function showErrorPage(error: string) {
   display: grid;
   grid-template-columns: repeat(3, 30%);
   justify-content: space-between;
-  gap: 20px; /* espace entre les colonnes */
+  gap: 20px;
   width: 100%;
 }
 </style>

@@ -10,6 +10,11 @@ const profileAPIUrl = 'http://localhost:8201/api/v1/profile'
  */
 export const useProfileStore = defineStore('profileStore', () => {
   /**
+   * list of profiles
+   */
+  const profileList = ref<Profile[]>([])
+
+  /**
    * currently displayed profile
    */
   const profile = ref<null | Profile>(null)
@@ -18,6 +23,21 @@ export const useProfileStore = defineStore('profileStore', () => {
    * error status of the last fetch
    */
   const error = ref<null | string>(null)
+
+  /**
+   * fetch all profiles from the API
+   */
+  const fetchProfiles = async () => {
+    axios
+      .get(profileAPIUrl)
+      .then((response) => {
+        profileList.value = response.data as Profile[]
+        error.value = null
+      })
+      .catch((err) => {
+        error.value = err.status ? err.status : 'error'
+      })
+  }
 
   /**
    * fetch a profile from the API
@@ -37,7 +57,9 @@ export const useProfileStore = defineStore('profileStore', () => {
 
   return {
     profile,
-    error,
-    fetchProfile
+    fetchProfile,
+    profileList,
+    fetchProfiles,
+    error
   }
 })
