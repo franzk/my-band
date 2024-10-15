@@ -8,6 +8,7 @@ import net.franzka.myband.profile.service.ProfileService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @Service
@@ -18,6 +19,11 @@ public class ProfileServiceImpl implements ProfileService {
     public Profile createProfile(Profile profile) {
         profile.setCreated(LocalDateTime.now());
         return profileRepository.save(profile);
+    }
+
+    @Override
+    public List<Profile> findAll() {
+        return profileRepository.findAll();
     }
 
     public Profile getProfileByUsername(String username) throws ProfileNotFoundException {
