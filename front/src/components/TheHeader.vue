@@ -23,7 +23,7 @@ import IconUser from '@/components/icons/IconUser.vue'
 .header {
   display: flex;
   padding: $spacing-small;
-  border-bottom: $border-size-tiny solid $shadow;
+  border-bottom: $border-size-large solid $accent;
   line-height: 0;
   position: relative;
 
@@ -35,6 +35,7 @@ import IconUser from '@/components/icons/IconUser.vue'
     img {
       width: $search-bar-height;
       height: $search-bar-height;
+      border-radius: 100%;
     }
   }
 
@@ -47,6 +48,7 @@ import IconUser from '@/components/icons/IconUser.vue'
 
   .user {
     right: $spacing-small;
+    color: $accent;
   }
 }
 </style>

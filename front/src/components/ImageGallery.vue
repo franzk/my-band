@@ -1,20 +1,20 @@
 <template>
   <ul>
-    <li v-for="picture in pictures" :key="picture.id">
-      <RouterLink :to="{ name: 'post', params: { id: picture.relatedPostId } }">
-        <img :src="picture.url" class="box-shadow" />
+    <li v-for="image in images" :key="image.id">
+      <RouterLink :to="{ name: 'post', params: { id: image.relatedPostId } }">
+        <img :src="image.url" class="box-shadow" />
       </RouterLink>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import type { Picture } from '@/types/Picture'
+import type { Image } from '@/types/Image'
 import type { PropType } from 'vue'
 
 const props = defineProps({
-  pictures: {
-    type: Array as PropType<Picture[]>,
+  images: {
+    type: Array as PropType<Image[]>,
     default: () => []
   }
 })

@@ -1,12 +1,10 @@
-import type { Picture } from '@/types/Picture'
-import type { Comment } from '@/types/Comment'
+import type { Image } from '@/types/Image'
 
 export interface Event {
   id: string
   date: Date
   eventDate: string
-  picture?: Picture
+  image?: Image
   title: string
   detail: string
-  comments?: Comment[]
 }

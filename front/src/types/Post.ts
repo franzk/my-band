@@ -1,4 +1,4 @@
-import type { Picture } from '@/types/Picture'
+import type { Image } from '@/types/Image'
 import type { Video } from '@/types/Video'
 
 /**
@@ -7,8 +7,10 @@ import type { Video } from '@/types/Video'
 export interface Post {
   id: string
   date: Date
+  title: string
   content: string
-  picture?: Picture
+  image?: Image
   video?: Video
-  comments?: Comment[]
+  created: Date
+  updated: Date
 }

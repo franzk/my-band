@@ -1,7 +1,7 @@
 /**
- * Picture type
+ * Image type
  */
-export interface Picture {
+export interface Image {
   id: string
   url: string
   relatedPostId?: string

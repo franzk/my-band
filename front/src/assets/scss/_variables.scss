@@ -1,13 +1,14 @@
 @import '@/assets/scss/_keyframes.scss';
 
 // colors
-$primary: #ffffffdd;
-$secondary: #aa1a1acc;
+$primary: #effbf9; // Dark Red
+$secondary: #2b2626;
+$accent: #f84957; // Light Pink
 
-$shadow: #1b1b1b;
-$ghost: #070707;
+//$shadow: #1b1b1b;
+//$ghost: #070707;
 
-$background: #181818;
+//$background: #181818;
 $black: #000000;
 
 $box-shadow-color: rgba(0, 0, 0, 0.5);
@@ -28,11 +29,14 @@ $spacing-large: 2rem;
 // border
 $border-size-tiny: 1px;
 $border-size-small: 2px;
+$border-size-medium: 3px;
+$border-size-large: 4px;
 
 $border-radius-xs: 0.125rem;
 $border-radius-tiny: 0.25rem;
 $border-radius-small: 0.5rem;
 $border-radius: 1rem;
+$border-radius-large: 2rem;
 $border-radius-xxl: 5.5rem;
 
 // font
@@ -41,6 +45,7 @@ $font-size-medium: 1rem;
 $font-size-large: 1.25rem;
 $font-size-xl: 1.5rem;
 $font-size-xxl: 2rem;
+$font-size-xxxl: 2.5rem;
 
 // elements sizes
 $search-bar-height: 2.5rem;

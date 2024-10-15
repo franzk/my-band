@@ -1,10 +1,17 @@
 <template>
   <div class="home">
-    <RouterLink to="/profile/tranxen200">Tranxen 200</RouterLink>
+    <div v-for="profile in profileStore.profileList" :key="profile.id">
+      <RouterLink :to="`/profile/${profile.username}`">{{ profile.title }}</RouterLink>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useProfileStore } from '@/stores/profileStore'
+
+const profileStore = useProfileStore()
+profileStore.fetchProfiles()
+</script>
 
 <style lang="scss" scoped>
 .home {

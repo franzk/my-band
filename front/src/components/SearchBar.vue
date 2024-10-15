@@ -3,7 +3,7 @@
     <span class="absolute-icon search-icon">
       <IconSearch />
     </span>
-    <input type="input" v-model="searchVal" placeholder="Rechercher..." />
+    <input type="input" v-model="searchVal" placeholder="search ..." />
     <span v-if="searchVal" class="absolute-icon clear-icon" @click="searchVal = ''">
       <IconCancel />
     </span>
@@ -34,11 +34,11 @@ input {
   font-weight: normal;
 
   color: $primary;
-  background-color: $black;
-  border: $border-size-tiny solid $shadow;
-  border-radius: $border-radius-xs;
+  background-color: $secondary;
+  border: $border-size-tiny solid $secondary;
+  border-radius: $border-radius-large;
   transition: border-color 0.15s ease-in-out;
-  box-shadow: 1px 1px 2px $shadow;
+  // box-shadow: 1px 1px 2px $accent;
 }
 
 .search-icon {
